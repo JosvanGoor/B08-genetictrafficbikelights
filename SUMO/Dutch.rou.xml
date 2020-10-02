@@ -2,29 +2,23 @@
 
 <!-- generated on 09/20/20 17:32:15 by Eclipse SUMO netedit Version 1.7.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
-
     <output>
         <output-file value="C:\Users\vladi\Desktop\SUMO\Dutch.net.xml"/>
     </output>
-
     <processing>
         <offset.disable-normalization value="true"/>
     </processing>
-
     <junctions>
         <no-internal-links value="false"/>
         <no-turnarounds value="true"/>
     </junctions>
-
     <netedit>
         <route-files value="C:\Users\vladi\Desktop\SUMO\Dutch.rou.xml"/>
         <TLSPrograms-output value="C:\Users\vladi\Desktop\SUMO\Dutch.xml"/>
     </netedit>
-
     <report>
         <aggregate-warnings value="5"/>
     </report>
-
 </configuration>
 -->
 
