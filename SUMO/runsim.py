@@ -35,17 +35,22 @@ class SumoEnv:
         for ilane in range(0, 8):
             lane_id = self.lane_ids[ilane]
             ncars = traci.lane.getLastStepVehicleNumber(lane_id)
+            print (ncars)
             cars = traci.lane.getLastStepVehicleIDs(lane_id)
             for icar in cars:
                 xcar, ycar = traci.vehicle.getPosition(icar)
                 if ilane < 2:
                     pos = (ycar - self.place_offset) / self.place_len
+                    print (pos)
                 elif ilane < 4:
                     pos = (xcar - self.place_offset) / self.place_len
+                    print (pos)
                 elif ilane < 6:
                     pos = (-ycar - self.place_offset) / self.place_len
+                    print (pos)
                 else:
                     pos = (-xcar - self.place_offset) / self.place_len
+                    print (pos)
                 if pos > self.lane_len - 1.:
                     continue
                 pos = np.clip(pos, 0., self.lane_len - 1. - 1e-6)
