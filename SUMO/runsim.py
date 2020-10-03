@@ -30,7 +30,7 @@ class SumoEnv:
         return
 
     def get_state_d(self):
-        state = np.zeros(self.lane_len * 8 + 4, dtype=np.float32)
+        state = np.zeros(self.lane_len * 8 + 5, dtype=np.float32)
 
         for ilane in range(0, 8):
             lane_id = self.lane_ids[ilane]
@@ -52,8 +52,8 @@ class SumoEnv:
                 ipos = int(pos)
                 state[int(ilane * self.lane_len + ipos)] += 1. - pos + ipos
                 state[int(ilane * self.lane_len + ipos + 1)] += pos - ipos
-            state[self.lane_len * 8:self.lane_len * 8+4] = np.eye(4)[traci.trafficlight.getPhase('gneJ10')]
-        return ipos
+            state[self.lane_len * 8:self.lane_len * 8+5] = np.eye(5)[traci.trafficlight.getPhase('gneJ10')]
+        return state
 
     def step_d(self, action):
         done = False
@@ -90,7 +90,7 @@ class SumoEnv:
         #print (traci.trafficlight.getIDList)
         traci.trafficlight.setPhase("gneJ10", 2)
         while traci.simulation.getMinExpectedNumber() > 0:
-            print(traci.simulation.getMinExpectedNumber())
+            #print(traci.simulation.getMinExpectedNumber())
             traci.simulationStep()
             if traci.trafficlight.getPhase("gneJ10") == 2:
                 # we are not already switching
@@ -99,8 +99,15 @@ class SumoEnv:
                     #traci.trafficlight.setPhase("0", 3)
                 #else:
                     # otherwise try to keep green for EW
+                traci.trafficlight.setPhase("gneJ10", 4)
+            elif traci.trafficlight.getPhase("gneJ10") ==4:
                 traci.trafficlight.setPhase("gneJ10", 3)
+            elif traci.trafficlight.getPhase("gneJ10") ==3:
+                traci.trafficlight.setPhase("gneJ10", 2)
+            print(traci.trafficlight.getPhase("gneJ10")) 
+            
             step += 1
+            print (self.get_state_d())
         traci.close()
         sys.stdout.flush()
 
