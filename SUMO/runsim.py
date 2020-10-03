@@ -15,6 +15,7 @@ class SumoEnv:
         self.label = label
         self.wt_last = 0.
         self.ncars = 0
+        self.nbikes = 0
 
         if 'SUMO_HOME' in os.environ:
             tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
@@ -89,6 +90,7 @@ class SumoEnv:
         #print (traci.trafficlight.getIDList)
         traci.trafficlight.setPhase("gneJ10", 2)
         while traci.simulation.getMinExpectedNumber() > 0:
+            print(traci.simulation.getMinExpectedNumber())
             traci.simulationStep()
             if traci.trafficlight.getPhase("gneJ10") == 2:
                 # we are not already switching
@@ -97,7 +99,7 @@ class SumoEnv:
                     #traci.trafficlight.setPhase("0", 3)
                 #else:
                     # otherwise try to keep green for EW
-                traci.trafficlight.setPhase("gneJ10", 2)
+                traci.trafficlight.setPhase("gneJ10", 3)
             step += 1
         traci.close()
         sys.stdout.flush()
@@ -105,6 +107,7 @@ class SumoEnv:
     def reset(self):
         self.wt_last = 0.
         self.ncars = 0
+        self.nbikes = 0
         traci.start(self.sumoCmd, label=self.label)
         traci.trafficlight.setProgram('gneJ10', '0')
         traci.simulationStep()
