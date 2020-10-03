@@ -1,5 +1,6 @@
 import traci
 from random import randint
+from beta_version import tlscontroller as tlsc
 
 SUMO_BINARY = "/usr/bin/sumo-gui"
 SUMO_COMMAND = [SUMO_BINARY, "-c", "SUMO/intersection.sumocfg"]
@@ -17,14 +18,14 @@ def generate_routes():
             traci.route.add("trip_{}".format(numroutes), [start_nodes[start], end_nodes[end]])
             numroutes += 1
 
-def close_empty_lanes():
+def close_empty_lanes(controller):
     # lanes = traci.trafficlight.getControlledLanes("tls_center")
     links = traci.trafficlight.getControlledLinks("tls_center")
     # state = traci.trafficlight.getRedYellowGreenState("tls_center")
 
     tls = [None] * 32
     for idx in range(32):
-        tls[idx] = ["r", links[idx][0][0], links[idx][0][1], links[idx][0][2]]
+        tls[idx] = [False, links[idx][0][0], links[idx][0][1], links[idx][0][2]]
     
     vehicles = traci.vehicle.getIDList()
     for vehicle in vehicles:
@@ -32,28 +33,34 @@ def close_empty_lanes():
 
         for idx in range(32):
             if tls[idx][1] == lane:
-                tls[idx][0] = "g"
+                print("setting it to true")
+                tls[idx][0] = True
 
-    states = ""
+    states = []
     for idx in range(32):
-        states += tls[idx][0]
+        states.append(tls[idx][0])
     print("states: {}".format(states))
-    traci.trafficlight.setRedYellowGreenState("tls_center", states)
+    controller.update_states(states)
+    traci.trafficlight.setRedYellowGreenState(controller.tls_id, controller.get_state_string())
+    
 
 # try:
 traci.start(SUMO_COMMAND)
 step = 0
 
 generate_routes()
+controller = tlsc.TlsController("tls_center")
 
 print(traci.trafficlight.getPhase("tls_center"))
 
 while step < 1000:
+    controller.update()
+
     if traci.simulation.getMinExpectedNumber() == 0:
         traci.vehicle.add("newVeh", "trip_{}".format(randint(0, numroutes - 1)))
         traci.vehicle.add("newVeh2", "trip_{}".format(randint(0, numroutes - 1)))
     
-    close_empty_lanes()
+    close_empty_lanes(controller)
 
     traci.simulationStep()
     step += 1
