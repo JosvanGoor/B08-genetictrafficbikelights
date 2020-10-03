@@ -3,14 +3,7 @@ from __future__ import print_function
 import os
 import sys
 import numpy as np
-if 'SUMO_HOME' in os.environ:
-    tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
-    sys.path.append(tools)
-else:
-    sys.exit("please declare environment variable 'SUMO_HOME'")
-
-import traci
-from sumolib import checkBinary  # noqa
+import optparse
 
 class SumoEnv:
     place_len = 7.5
@@ -86,16 +79,64 @@ class SumoEnv:
 
         return state, reward, done, np.array([[reward]])
 
+
+    def run(self):
+        """execute the TraCI control loop"""
+        step = 0
+        # we start with phase 2 where EW has green
+        # I dont know what the traffic light ID is
+
+        #print (traci.trafficlight.getIDList)
+        traci.trafficlight.setPhase("gneJ10", 2)
+        while traci.simulation.getMinExpectedNumber() > 0:
+            traci.simulationStep()
+            if traci.trafficlight.getPhase("gneJ10") == 2:
+                # we are not already switching
+                #if traci.inductionloop.getLastStepVehicleNumber("0") > 0:
+                    # there is a vehicle from the north, switch
+                    #traci.trafficlight.setPhase("0", 3)
+                #else:
+                    # otherwise try to keep green for EW
+                traci.trafficlight.setPhase("gneJ10", 2)
+            step += 1
+        traci.close()
+        sys.stdout.flush()
+
     def reset(self):
         self.wt_last = 0.
         self.ncars = 0
         traci.start(self.sumoCmd, label=self.label)
         traci.trafficlight.setProgram('gneJ10', '0')
         traci.simulationStep()
-        return self.get_state_d()
+        #return self.get_state_d()
 
     def close(self):
         traci.close()
 
-s = SumoEnv()
-s.reset()
+
+if __name__ == "__main__":
+    if 'SUMO_HOME' in os.environ:
+        tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
+        sys.path.append(tools)
+    else:
+        sys.exit("please declare environment variable 'SUMO_HOME'")
+
+    import traci
+    from sumolib import checkBinary  # noqa
+    optParser = optparse.OptionParser()
+    optParser.add_option("--nogui", action="store_true",
+                         default=False, help="run the commandline version of sumo")
+    options, args = optParser.parse_args()
+    if options.nogui:
+        sumoBinary = checkBinary('sumo')
+    else:
+        sumoBinary = checkBinary('sumo-gui')
+
+    # first, generate the route file for this simulation
+    #generate_routefile()
+
+    # this is the normal way of using traci. sumo is started as a
+    # subprocess and then the python script connects and runs
+    traci.start([sumoBinary, "-c","Dutch.sumocfg"])
+    s = SumoEnv()
+    s.run()
