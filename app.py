@@ -48,7 +48,7 @@ generate_routes()
 
 print(traci.trafficlight.getPhase("tls_center"))
 
-while step < 10000:
+while step < 1000:
     if traci.simulation.getMinExpectedNumber() == 0:
         traci.vehicle.add("newVeh", "trip_{}".format(randint(0, numroutes - 1)))
         traci.vehicle.add("newVeh2", "trip_{}".format(randint(0, numroutes - 1)))
