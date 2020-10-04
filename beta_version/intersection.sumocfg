@@ -7,7 +7,8 @@
 
     <input>
         <net-file value="intersection.net.xml"/>
-        <route-files value="intersection.rou.xml"/>
+        <route-files value="intersection2.rou.xml"/>
+        <!-- We use rout the second type of flow which is more realistic -->
     </input>
 
     <time>

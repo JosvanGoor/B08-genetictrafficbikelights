@@ -12,8 +12,6 @@ class Genetic:
         #self.configname = [sumoBinary, "-c","Dutch.sumocfg"]
         #connection.traci.start(self.configname)
         self.tlights = traci.trafficlight.getIDList()
-        for tl in self.tlights:
-            print(traci.trafficlight.getControlledLanes(tl))
         self.lanes = {tl:traci.trafficlight.getControlledLanes(tl) for tl in self.tlights}
     
     def setGenome(self,state):

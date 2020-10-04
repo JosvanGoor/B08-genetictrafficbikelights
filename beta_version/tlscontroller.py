@@ -33,12 +33,11 @@ class TlsController:
     
     def __init__(self, tlsid, orange_time = 4):
         self.tls_id = tlsid
-        self.orange_time = 4 #4 seconds
+        self.orange_time = orange_time #4 seconds
 
         states = traci.trafficlight.getRedYellowGreenState(tlsid)
         self.lights = [TrafficLight(states[idx]) for idx in range(len(states))]
-
-
+        
     # Generates state string required for setRedYellowGreen
     def get_state_string(self):
         state = ""
