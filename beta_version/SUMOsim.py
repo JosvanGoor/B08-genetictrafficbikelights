@@ -6,7 +6,7 @@ import numpy as np
 import optparse
 import random
 
-
+from genetic import Genetic
 from tlscontroller import TlsController
 
 def run():
@@ -14,17 +14,19 @@ def run():
     step = 0
     state = [0]*32
     TLS = TlsController("tls_center")
+    GN = Genetic(state)
 
     while traci.simulation.getMinExpectedNumber() > 0:
         #We do things here to get the flow going
         state = []
         for i in range(32):
             state.append(random.randint(0, 1) == 0)
-        print(state)
+        #print(state)
         
         TLS.update_states(state)
         TLS.update()
         traci.trafficlight.setRedYellowGreenState("tls_center", TLS.get_state_string())
+        print(GN.getFitnessFunction(state))
         traci.simulationStep()
 
     traci.close()

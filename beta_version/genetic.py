@@ -1,29 +1,40 @@
-from tlscontroller import TlsController
-from SUMOsim import SUMOsim
+#from tlscontroller import TlsController
+#from SUMOsim import SUMOsim
+import traci
 
-class Genetic():
+
+
+class Genetic:
     def __init__(self,state):
-        self.state = TlsController.get_state_string
-        connection = SUMOsim()
-        self.configname = [sumoBinary, "-c","Dutch.sumocfg"]
-        connection.traci.start(self.configname)
+        #TLS = TlsController()
+        self.state = state
+        #connection = SUMOsim()
+        #self.configname = [sumoBinary, "-c","Dutch.sumocfg"]
+        #connection.traci.start(self.configname)
+        self.tlights = traci.trafficlight.getIDList()
+        for tl in self.tlights:
+            print(traci.trafficlight.getControlledLanes(tl))
+        self.lanes = {tl:traci.trafficlight.getControlledLanes(tl) for tl in self.tlights}
     
     def setGenome(self,state):
         pass
 
-    def getFitnessFunction(self):
+    def getFitnessFunction(self,state):
         fitness = 0
-        state = self.state
-        self.setGenome(State)
-        if connection.traci.getCollidingVehiclesNumber() > 0:
+        #state = self.state
+        self.setGenome(state)
+        print(traci.simulation.getCollidingVehiclesNumber())
+        if traci.simulation.getCollidingVehiclesNumber() > 0:
 			# break the current simulation and penalize the genome's fitness
-            collision_penalty = connection.traci.getCollidingVehiclesNumber()
-			fitness += collision_penalty
-			break
+            collision_penalty = traci.simulation.getCollidingVehiclesNumber()
+            fitness += collision_penalty
+            #fitness = 1/fitness
         timeWaiting = 0
-        timeWaiting = connection.traci.getWaitingTime()
-        fitness += timeWaiting
-        fitness = 1/fitness
+        for laneid in self.lanes.values():
+            for lane in laneid:
+                timeWaiting = traci.lane.getWaitingTime(lane)
+                fitness += timeWaiting
+        #print(fitness)
         return fitness
 
 
