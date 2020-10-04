@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 10/04/20 22:06:00 by Eclipse SUMO netedit Version 1.7.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="C:\Users\vladi\Desktop\DMAS\B08-genetictrafficbikelights\beta_version\intersection.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="C:\Users\vladi\Desktop\DMAS\B08-genetictrafficbikelights\beta_version\intersection.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.5"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+    <netedit>
+        <route-files value="C:\Users\vladi\Desktop\DMAS\B08-genetictrafficbikelights\beta_version\intersection2.rou.xml"/>
+    </netedit>
+
+    <report>
+        <aggregate-warnings value="5"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <route edges="edge_north_center edge_center_south" color="yellow" id="route_0"/>
+    <route edges="edge_north_center edge_center_west" color="yellow" id="route_1"/>
+    <route edges="edge_west_center edge_center_east" color="yellow" id="route_10"/>
+    <route edges="edge_west_center edge_center_north" color="yellow" id="route_11"/>
+    <route edges="edge_west_center edge_center_east" color="yellow" id="route_12"/>
+    <route edges="edge_west_center edge_center_south" color="yellow" id="route_13"/>
+    <route edges="edge_west_center edge_center_north" color="yellow" id="route_14"/>
+    <route edges="edge_south_center edge_center_east" color="yellow" id="route_15"/>
+    <route edges="edge_south_center edge_center_north" color="yellow" id="route_16"/>
+    <route edges="edge_south_center edge_center_west" color="yellow" id="route_17"/>
+    <route edges="edge_east_center edge_center_north" color="yellow" id="route_18"/>
+    <route edges="edge_east_center edge_center_west" color="yellow" id="route_19"/>
+    <route edges="edge_north_center edge_center_east" color="yellow" id="route_2"/>
+    <route edges="edge_south_center edge_center_east" color="yellow" id="route_20"/>
+    <route edges="edge_north_center edge_center_west" color="yellow" id="route_21"/>
+    <route edges="edge_north_center edge_center_south" color="yellow" id="route_22"/>
+    <route edges="edge_north_center edge_center_east" color="yellow" id="route_23"/>
+    <route edges="edge_east_center edge_center_south" color="yellow" id="route_24"/>
+    <route edges="edge_east_center edge_center_north" color="yellow" id="route_3"/>
+    <route edges="edge_east_center edge_center_west" color="yellow" id="route_4"/>
+    <route edges="edge_east_center edge_center_south" color="yellow" id="route_5"/>
+    <route edges="edge_south_center edge_center_east" color="yellow" id="route_6"/>
+    <route edges="edge_south_center edge_center_north" color="yellow" id="route_7"/>
+    <route edges="edge_south_center edge_center_west" color="yellow" id="route_8"/>
+    <route edges="edge_west_center edge_center_south" color="yellow" id="route_9"/>
+    <flow id="flow_0" begin="0.00" color="0,63,255" route="route_7" end="3600.00" vehsPerHour="116.00"/>
+    <flow id="flow_1" begin="0.00" route="route_15" end="3600.00" vehsPerHour="116.00"/>
+    <flow id="flow_10" begin="0.00" route="route_20" end="3600.00" vehsPerHour="116.00"/>
+    <flow id="flow_11" begin="0.00" color="0,255,118" route="route_5" end="3600.00" vehsPerHour="116.00"/>
+    <flow id="flow_12" begin="0.00" color="0,255,81" route="route_4" end="3600.00" vehsPerHour="116.00"/>
+    <flow id="flow_13" begin="0.00" color="255,0,250" route="route_2" end="3600.00" vehsPerHour="116.00"/>
+    <flow id="flow_14" begin="0.00" color="0,128,0" route="route_1" end="3600.00" vehsPerHour="116.00"/>
+    <flow id="flow_15" type="DEFAULT_BIKETYPE" begin="0.00" color="255,224,252" route="route_16" end="3600.00" vehsPerHour="166.00"/>
+    <flow id="flow_16" type="DEFAULT_BIKETYPE" begin="0.00" color="0,0,128" route="route_17" end="3600.00" vehsPerHour="166.00"/>
+    <flow id="flow_17" type="DEFAULT_BIKETYPE" begin="0.00" color="0,128,0" route="route_19" end="3600.00" vehsPerHour="166.00"/>
+    <flow id="flow_18" type="DEFAULT_BIKETYPE" begin="0.00" color="cyan" route="route_18" end="3600.00" vehsPerHour="166.00"/>
+    <flow id="flow_19" type="DEFAULT_BIKETYPE" begin="0.00" color="128,0,128" route="route_22" end="3600.00" vehsPerHour="166.00"/>
+    <flow id="flow_2" begin="0.00" route="route_3" end="3600.00" vehsPerHour="116.00"/>
+    <flow id="flow_20" type="DEFAULT_BIKETYPE" begin="0.00" color="128,0,0" route="route_23" end="3600.00" vehsPerHour="166.00"/>
+    <flow id="flow_21" type="DEFAULT_BIKETYPE" begin="0.00" route="route_12" end="3600.00" vehsPerHour="166.00"/>
+    <flow id="flow_22" type="DEFAULT_BIKETYPE" begin="0.00" color="128,128,0" route="route_13" end="3600.00" vehsPerHour="166.00"/>
+    <flow id="flow_23" type="DEFAULT_BIKETYPE" begin="0.00" color="255,43,0" route="route_14" end="3600.00" vehsPerHour="166.00"/>
+    <flow id="flow_3" begin="0.00" route="route_0" end="1200.00" vehsPerHour="120.00"/>
+    <flow id="flow_4" begin="0.00" color="0,34,255" route="route_9" end="3600.00" vehsPerHour="116.00"/>
+    <flow id="flow_5" begin="0.00" route="route_11" end="3600.00" vehsPerHour="116.00"/>
+    <flow id="flow_6" type="DEFAULT_BIKETYPE" begin="0.00" route="route_15" end="3600.00" vehsPerHour="166.00"/>
+    <flow id="flow_7" type="DEFAULT_BIKETYPE" begin="0.00" route="route_24" end="3600.00" vehsPerHour="166.00"/>
+    <flow id="flow_8" type="DEFAULT_BIKETYPE" begin="0.00" route="route_21" end="3600.00" vehsPerHour="166.00"/>
+    <flow id="flow_9" begin="0.00" color="255,34,0" route="route_10" end="3600.00" vehsPerHour="116.00"/>
+</routes>
