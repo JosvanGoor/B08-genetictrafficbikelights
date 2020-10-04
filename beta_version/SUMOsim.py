@@ -18,16 +18,17 @@ def run():
 
     while traci.simulation.getMinExpectedNumber() > 0:
         #We do things here to get the flow going
-        state = []
-        for i in range(32):
-            state.append(random.randint(0, 1) == 0)
-        #print(state)
+        if step % 12 == 0: # atm we change every 12 steps, this is a stub
+            state = []
+            for i in range(32):
+                state.append(random.randint(0, 1) == 0)
+            TLS.update_states(state)
         
-        TLS.update_states(state)
         TLS.update()
         traci.trafficlight.setRedYellowGreenState("tls_center", TLS.get_state_string())
         print(GN.getFitnessFunction(state))
         traci.simulationStep()
+        step += 1
 
     traci.close()
     sys.stdout.flush()
