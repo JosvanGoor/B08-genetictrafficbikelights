@@ -19,8 +19,14 @@ def run():
         #We do things here to get the flow going
         state = []
         for i in range(32):
-            state.append(random.randint(0, 1))
+            state.append(random.randint(0, 1) == 0)
+        print(state)
+        
         TLS.update_states(state)
+        TLS.update()
+        traci.trafficlight.setRedYellowGreenState("tls_center", TLS.get_state_string())
+        traci.simulationStep()
+
     traci.close()
     sys.stdout.flush()
 

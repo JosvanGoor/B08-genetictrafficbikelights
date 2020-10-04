@@ -1,5 +1,6 @@
 import traci
 
+# Simple structure for storing state for a single TL
 class TrafficLight:
 
     def __init__(self, state):
@@ -8,6 +9,7 @@ class TrafficLight:
         self.timer = None
 
 
+    # timed updater
     def update(self):
         if self.timer and self.timer == 1:
             self.state = self.nextstate
@@ -17,13 +19,16 @@ class TrafficLight:
             self.timer -= 1
 
 
+    # shorthand for state update
     def set_state(self, newstate, newnext = None, timer = None):
         self.state = newstate
         self.nextstate = newnext
         self.timer = timer
 
 
-
+# Simple controller that ensures that traffic lights go from
+# green to red via yellow without the underlying algorithm having
+# to worry about that
 class TlsController:
     
     def __init__(self, tlsid, orange_time = 4):
@@ -34,6 +39,7 @@ class TlsController:
         self.lights = [TrafficLight(states[idx]) for idx in range(len(states))]
 
 
+    # Generates state string required for setRedYellowGreen
     def get_state_string(self):
         state = ""
         for light in self.lights:
@@ -41,11 +47,13 @@ class TlsController:
         return state
 
 
+    # runs timer updates
     def update(self):
         for light in self.lights:
             light.update()
 
 
+    # sets new TL states
     def update_states(self, states):
         for idx in range(len(states)):
             if states[idx]:
@@ -59,23 +67,3 @@ class TlsController:
                 if self.lights[idx].state == "r" or self.lights[idx].state == "y":
                     continue # already transitioning or red
                 self.lights[idx].set_state("y", "r", self.orange_time)
-
-        
-        return
-        for idx in range(len(self.lights)):
-            # go to yellow and schedule red
-            if not states[idx]:
-                if self.lights[idx].state == "g":
-                    self.lights[idx].set_state("y", "r", self.orange_time)
-                elif self.lights[idx].state == "y":
-                    pass # ignore already yellow lights
-                else: self.lights[idx].set_state("r")
-            # schedule green after yellows went red
-            elif states[idx] and self.lights[idx].state == "r":
-                print("red->green")
-                self.lights[idx].set_state("r", "g", self.orange_time)
-            # else its something else so we just force it
-            else:
-
-                print("last chance setting {}".format("g" if states[idx] else "r"))
-                self.lights[idx].set_state("g" if states[idx] else "r")
