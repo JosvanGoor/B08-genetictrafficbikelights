@@ -4,16 +4,23 @@ import os
 import sys
 import numpy as np
 import optparse
+import random
+
 
 from tlscontroller import TlsController
 
 def run():
     """execute the TraCI control loop"""
     step = 0
+    state = [0]*32
+    TLS = TlsController("tls_center")
 
     while traci.simulation.getMinExpectedNumber() > 0:
         #We do things here to get the flow going
-        pass
+        state = []
+        for i in range(32):
+            state.append(random.randint(0, 1))
+        TLS.update_states(state)
     traci.close()
     sys.stdout.flush()
 
