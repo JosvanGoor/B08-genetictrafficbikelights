@@ -1,5 +1,7 @@
 # B08-genetictrafficbikelights
 
+## DEV BRANCH WITH OLD FILES
+
 ## Installation
 We are using the SUMO platform, installation instructions for SUMO can be found at https://sumo.dlr.de/docs/Installing.html
 
@@ -11,4 +13,4 @@ The beta currently only has a fitness function part for the genetic algorithm, w
 ```
 python SUMOsim.py
 ```
-n.b. this assumes that `python` refers to the python 3 installation, else replace `python` with `python3` in the previous command.
+n.b. this assumes that `python` refers to the python 3 installation, else replace `python` with `python3` in the.
