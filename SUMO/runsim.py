@@ -131,8 +131,7 @@ class SumoEnv:
 
 if __name__ == "__main__":
     if 'SUMO_HOME' in os.environ:
-        tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
-        sys.path.append(tools)
+        sys.path.append(os.path.join(os.environ.get("SUMO_HOME"), 'tools'))
     else:
         sys.exit("please declare environment variable 'SUMO_HOME'")
 
