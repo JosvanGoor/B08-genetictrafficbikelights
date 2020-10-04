@@ -7,6 +7,16 @@ import optparse
 
 from tlscontroller import TlsController
 
+def run():
+    """execute the TraCI control loop"""
+    step = 0
+
+    while traci.simulation.getMinExpectedNumber() > 0:
+        #We do things here to get the flow going
+        pass
+    traci.close()
+    sys.stdout.flush()
+
 
 if __name__ == "__main__":
     if 'SUMO_HOME' in os.environ:
@@ -31,5 +41,7 @@ if __name__ == "__main__":
         # subprocess and then the python script connects and runs
     traci.start([sumoBinary, "-c","intersection.sumocfg"])
 
+
+run()
 
 
