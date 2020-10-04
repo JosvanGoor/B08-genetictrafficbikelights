@@ -1,7 +1,7 @@
 #from tlscontroller import TlsController
 #from SUMOsim import SUMOsim
 import traci
-
+import math
 
 
 class Genetic:
@@ -23,7 +23,7 @@ class Genetic:
         fitness = 0
         #state = self.state
         self.setGenome(state)
-        print(traci.simulation.getCollidingVehiclesNumber())
+        #print(traci.simulation.getCollidingVehiclesNumber())
         if traci.simulation.getCollidingVehiclesNumber() > 0:
 			# break the current simulation and penalize the genome's fitness
             collision_penalty = traci.simulation.getCollidingVehiclesNumber()
@@ -35,6 +35,9 @@ class Genetic:
                 timeWaiting = traci.lane.getWaitingTime(lane)
                 fitness += timeWaiting
         #print(fitness)
-        return fitness
+        if fitness == 0:
+            return 100
+        else:
+            return 1/math.log(fitness,10)
 
 
