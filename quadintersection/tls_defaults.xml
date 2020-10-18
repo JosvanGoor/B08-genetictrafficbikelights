@@ -1,0 +1,27 @@
+<additionals>
+    <tlLogic id="junction_ne" type="static" programID="0" offset="0">
+        <phase duration="42" state="GGggGGgrrrrrrrGGggGGgrrrrrrr"/>
+        <phase duration="3"  state="yyyyyyyrrrrrrryyyyyyyrrrrrrr"/>
+        <phase duration="42" state="rrrrrrrGGggGGgrrrrrrrGGggGGg"/>
+        <phase duration="3"  state="rrrrrrryyyyyyyrrrrrrryyyyyyy"/>
+    </tlLogic>
+    <tlLogic id="junction_nw" type="static" programID="0" offset="0">
+        <phase duration="42" state="GGggGGgrrrrrrrGGggGGgrrrrrrr"/>
+        <phase duration="3"  state="yyyyyyyrrrrrrryyyyyyyrrrrrrr"/>
+        <phase duration="42" state="rrrrrrrGGggGGgrrrrrrrGGggGGg"/>
+        <phase duration="3"  state="rrrrrrryyyyyyyrrrrrrryyyyyyy"/>
+    </tlLogic>
+    <tlLogic id="junction_se" type="static" programID="0" offset="0">
+        <phase duration="42" state="GGggGGgrrrrrrrGGggGGgrrrrrrr"/>
+        <phase duration="3"  state="yyyyyyyrrrrrrryyyyyyyrrrrrrr"/>
+        <phase duration="42" state="rrrrrrrGGggGGgrrrrrrrGGggGGg"/>
+        <phase duration="3"  state="rrrrrrryyyyyyyrrrrrrryyyyyyy"/>
+    </tlLogic>
+    <tlLogic id="junction_sw" type="static" programID="0" offset="0">
+        <phase duration="42" state="GGggGGgrrrrrrrGGggGGgrrrrrrr"/>
+        <phase duration="3"  state="yyyyyyyrrrrrrryyyyyyyrrrrrrr"/>
+        <phase duration="42" state="rrrrrrrGGggGGgrrrrrrrGGggGGg"/>
+        <phase duration="3"  state="rrrrrrryyyyyyyrrrrrrryyyyyyy"/>
+    </tlLogic>
+
+</additionals>

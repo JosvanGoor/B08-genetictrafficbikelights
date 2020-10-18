@@ -6,11 +6,13 @@
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
-        <net-file value="intersection.net.xml"/>
-        <additional-files value="intersection.additional.xml"/>
+        <net-file value="quad.net.xml"/>
+        <additional-files value="quad.additional.xml"/>
         <!-- We use rout the second type of flow which is more realistic -->
         <!-- <route-files value="intersection2.rou.xml"/> -->
     </input>
+
+    <time-to-teleport value="-1"/>
 
     <time>
         <begin value="0"/>
