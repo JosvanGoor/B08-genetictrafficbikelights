@@ -1,4 +1,4 @@
-#from tlscontroller import TlsController
+from tlscontroller import TlsController
 #from SUMOsim import SUMOsim
 import traci
 import math
@@ -37,5 +37,39 @@ class Genetic:
             return 100
         else:
             return 1/math.log(fitness,10)
+
+    #Cross 2 models randomly to get final model
+    def crossover(model1,model2):
+        duration_1,state_1 = model1
+        duration_2,state_2 = model2
+        duration_final = []
+        state_final = []
+        for idx in range(len(duration_1)):
+            if np.random.uniform() < 0.5:
+                duration_final.append(duration_1[i])
+            else:
+                duration_final.append(duration_2[i])
+        for idx in range(len(state_1)):
+            if np.random.uniform() < 0.5:
+                duration_final.append(state_1[i])
+            else:
+                duration_final.append(state_2[i])
+        return duration_final,state_final
+            
+    def mutation(durations, states, n_duration = duration_mutation_rate, n_state = states_mutation_rate, strength = duration_mutation_strengths):
+        duration_cp = list(durations)
+        state_cp = list(states)
+        length = len(states)
+        ran_idx = np.where(np.random.uniform(size = length)<n_duration)[0]
+        for idx in ran_idx:
+            duration_cp[idx] += np.random.normal(scale = strength)
+        for idx in range(length):
+            state = list(state_cp[idx])
+            for num in np.where(np.random.uniform(size = length) < n_state)[0]:
+                state = np.random.choice([0,1])  
+            state_cp[idx] = state
+        return duration_cp,state_cp
+
+
 
 
