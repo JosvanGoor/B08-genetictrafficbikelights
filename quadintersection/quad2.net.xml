@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on Sun Oct 25 12:23:48 2020 by Eclipse SUMO netedit Version 1.7.0
+<!-- generated on Sun Oct 25 13:03:51 2020 by Eclipse SUMO netedit Version 1.7.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
@@ -50,20 +50,20 @@
         <lane id=":junc_ne_2_0" index="0" allow="bicycle" speed="11.57" length="0.32" shape="392.00,111.10 392.05,110.78"/>
     </edge>
     <edge id=":junc_ne_3" function="internal">
-        <lane id=":junc_ne_3_0" index="0" speed="6.86" length="10.16" shape="395.20,111.10 394.81,108.34 393.62,106.38 391.66,105.19 388.90,104.80"/>
+        <lane id=":junc_ne_3_0" index="0" disallow="bicycle" speed="6.86" length="10.16" shape="395.20,111.10 394.81,108.34 393.62,106.38 391.66,105.19 388.90,104.80"/>
     </edge>
     <edge id=":junc_ne_4" function="internal">
-        <lane id=":junc_ne_4_0" index="0" speed="13.89" length="22.20" shape="395.20,111.10 395.20,88.90"/>
-        <lane id=":junc_ne_4_1" index="1" speed="13.89" length="22.20" shape="398.40,111.10 398.40,88.90"/>
+        <lane id=":junc_ne_4_0" index="0" disallow="bicycle" speed="13.89" length="22.20" shape="395.20,111.10 395.20,88.90"/>
+        <lane id=":junc_ne_4_1" index="1" disallow="bicycle" speed="13.89" length="22.20" shape="398.40,111.10 398.40,88.90"/>
     </edge>
     <edge id=":junc_ne_6" function="internal">
-        <lane id=":junc_ne_6_0" index="0" speed="9.51" length="1.38" shape="398.40,111.10 398.60,109.73"/>
+        <lane id=":junc_ne_6_0" index="0" disallow="bicycle" speed="9.51" length="1.38" shape="398.40,111.10 398.60,109.73"/>
     </edge>
     <edge id=":junc_ne_28" function="internal">
         <lane id=":junc_ne_28_0" index="0" allow="bicycle" speed="11.57" length="30.48" shape="392.05,110.78 393.19,102.74 396.77,96.78 402.74,93.19 411.10,92.00"/>
     </edge>
     <edge id=":junc_ne_29" function="internal">
-        <lane id=":junc_ne_29_0" index="0" speed="9.51" length="19.10" shape="398.60,109.73 399.19,105.54 401.57,101.57 405.54,99.19 411.10,98.40"/>
+        <lane id=":junc_ne_29_0" index="0" disallow="bicycle" speed="9.51" length="19.10" shape="398.60,109.73 399.19,105.54 401.57,101.57 405.54,99.19 411.10,98.40"/>
     </edge>
     <edge id=":junc_ne_7" function="internal">
         <lane id=":junc_ne_7_0" index="0" allow="bicycle" speed="5.04" length="5.00" shape="411.10,108.00 409.74,108.19 408.77,108.78 408.19,109.74 408.00,111.10"/>
@@ -75,14 +75,14 @@
         <lane id=":junc_ne_9_0" index="0" allow="bicycle" speed="11.57" length="30.80" shape="411.10,108.00 402.74,106.81 396.77,103.22 393.19,97.26 392.00,88.90"/>
     </edge>
     <edge id=":junc_ne_10" function="internal">
-        <lane id=":junc_ne_10_0" index="0" speed="6.86" length="10.16" shape="411.10,104.80 408.34,105.19 406.38,106.38 405.19,108.34 404.80,111.10"/>
+        <lane id=":junc_ne_10_0" index="0" disallow="bicycle" speed="6.86" length="10.16" shape="411.10,104.80 408.34,105.19 406.38,106.38 405.19,108.34 404.80,111.10"/>
     </edge>
     <edge id=":junc_ne_11" function="internal">
-        <lane id=":junc_ne_11_0" index="0" speed="13.89" length="22.20" shape="411.10,104.80 388.90,104.80"/>
-        <lane id=":junc_ne_11_1" index="1" speed="13.89" length="22.20" shape="411.10,101.60 388.90,101.60"/>
+        <lane id=":junc_ne_11_0" index="0" disallow="bicycle" speed="13.89" length="22.20" shape="411.10,104.80 388.90,104.80"/>
+        <lane id=":junc_ne_11_1" index="1" disallow="bicycle" speed="13.89" length="22.20" shape="411.10,101.60 388.90,101.60"/>
     </edge>
     <edge id=":junc_ne_13" function="internal">
-        <lane id=":junc_ne_13_0" index="0" speed="9.51" length="20.48" shape="411.10,101.60 405.54,100.81 401.58,98.42 399.19,94.46 398.40,88.90"/>
+        <lane id=":junc_ne_13_0" index="0" disallow="bicycle" speed="9.51" length="20.48" shape="411.10,101.60 405.54,100.81 401.58,98.42 399.19,94.46 398.40,88.90"/>
     </edge>
     <edge id=":junc_ne_14" function="internal">
         <lane id=":junc_ne_14_0" index="0" allow="bicycle" speed="5.04" length="5.00" shape="408.00,88.90 408.19,90.26 408.77,91.22 409.74,91.81 411.10,92.00"/>
@@ -94,20 +94,20 @@
         <lane id=":junc_ne_16_0" index="0" allow="bicycle" speed="11.57" length="0.32" shape="408.00,88.90 407.95,89.22"/>
     </edge>
     <edge id=":junc_ne_17" function="internal">
-        <lane id=":junc_ne_17_0" index="0" speed="6.86" length="10.16" shape="404.80,88.90 405.19,91.66 406.38,93.62 408.34,94.81 411.10,95.20"/>
+        <lane id=":junc_ne_17_0" index="0" disallow="bicycle" speed="6.86" length="10.16" shape="404.80,88.90 405.19,91.66 406.38,93.62 408.34,94.81 411.10,95.20"/>
     </edge>
     <edge id=":junc_ne_18" function="internal">
-        <lane id=":junc_ne_18_0" index="0" speed="13.89" length="22.20" shape="404.80,88.90 404.80,111.10"/>
-        <lane id=":junc_ne_18_1" index="1" speed="13.89" length="22.20" shape="401.60,88.90 401.60,111.10"/>
+        <lane id=":junc_ne_18_0" index="0" disallow="bicycle" speed="13.89" length="22.20" shape="404.80,88.90 404.80,111.10"/>
+        <lane id=":junc_ne_18_1" index="1" disallow="bicycle" speed="13.89" length="22.20" shape="401.60,88.90 401.60,111.10"/>
     </edge>
     <edge id=":junc_ne_20" function="internal">
-        <lane id=":junc_ne_20_0" index="0" speed="9.51" length="1.38" shape="401.60,88.90 401.40,90.27"/>
+        <lane id=":junc_ne_20_0" index="0" disallow="bicycle" speed="9.51" length="1.38" shape="401.60,88.90 401.40,90.27"/>
     </edge>
     <edge id=":junc_ne_30" function="internal">
         <lane id=":junc_ne_30_0" index="0" allow="bicycle" speed="11.57" length="30.48" shape="407.95,89.22 406.81,97.26 403.23,103.22 397.26,106.81 388.90,108.00"/>
     </edge>
     <edge id=":junc_ne_31" function="internal">
-        <lane id=":junc_ne_31_0" index="0" speed="9.51" length="19.10" shape="401.40,90.27 400.81,94.46 398.43,98.43 394.46,100.81 388.90,101.60"/>
+        <lane id=":junc_ne_31_0" index="0" disallow="bicycle" speed="9.51" length="19.10" shape="401.40,90.27 400.81,94.46 398.43,98.43 394.46,100.81 388.90,101.60"/>
     </edge>
     <edge id=":junc_ne_21" function="internal">
         <lane id=":junc_ne_21_0" index="0" allow="bicycle" speed="5.04" length="5.00" shape="388.90,92.00 390.26,91.81 391.23,91.22 391.81,90.26 392.00,88.90"/>
@@ -119,14 +119,14 @@
         <lane id=":junc_ne_23_0" index="0" allow="bicycle" speed="11.57" length="30.80" shape="388.90,92.00 397.26,93.19 403.23,96.78 406.81,102.74 408.00,111.10"/>
     </edge>
     <edge id=":junc_ne_24" function="internal">
-        <lane id=":junc_ne_24_0" index="0" speed="6.86" length="10.16" shape="388.90,95.20 391.66,94.81 393.62,93.62 394.81,91.66 395.20,88.90"/>
+        <lane id=":junc_ne_24_0" index="0" disallow="bicycle" speed="6.86" length="10.16" shape="388.90,95.20 391.66,94.81 393.62,93.62 394.81,91.66 395.20,88.90"/>
     </edge>
     <edge id=":junc_ne_25" function="internal">
-        <lane id=":junc_ne_25_0" index="0" speed="13.89" length="22.20" shape="388.90,95.20 411.10,95.20"/>
-        <lane id=":junc_ne_25_1" index="1" speed="13.89" length="22.20" shape="388.90,98.40 411.10,98.40"/>
+        <lane id=":junc_ne_25_0" index="0" disallow="bicycle" speed="13.89" length="22.20" shape="388.90,95.20 411.10,95.20"/>
+        <lane id=":junc_ne_25_1" index="1" disallow="bicycle" speed="13.89" length="22.20" shape="388.90,98.40 411.10,98.40"/>
     </edge>
     <edge id=":junc_ne_27" function="internal">
-        <lane id=":junc_ne_27_0" index="0" speed="9.51" length="20.48" shape="388.90,98.40 394.46,99.19 398.42,101.58 400.81,105.54 401.60,111.10"/>
+        <lane id=":junc_ne_27_0" index="0" disallow="bicycle" speed="9.51" length="20.48" shape="388.90,98.40 394.46,99.19 398.42,101.58 400.81,105.54 401.60,111.10"/>
     </edge>
     <edge id=":junc_nw_0" function="internal">
         <lane id=":junc_nw_0_0" index="0" allow="bicycle" speed="5.04" length="5.00" shape="192.00,111.10 191.81,109.74 191.22,108.77 190.26,108.19 188.90,108.00"/>
@@ -138,20 +138,20 @@
         <lane id=":junc_nw_2_0" index="0" allow="bicycle" speed="11.57" length="0.32" shape="192.00,111.10 192.05,110.78"/>
     </edge>
     <edge id=":junc_nw_3" function="internal">
-        <lane id=":junc_nw_3_0" index="0" speed="6.86" length="10.16" shape="195.20,111.10 194.81,108.34 193.62,106.38 191.66,105.19 188.90,104.80"/>
+        <lane id=":junc_nw_3_0" index="0" disallow="bicycle" speed="6.86" length="10.16" shape="195.20,111.10 194.81,108.34 193.62,106.38 191.66,105.19 188.90,104.80"/>
     </edge>
     <edge id=":junc_nw_4" function="internal">
-        <lane id=":junc_nw_4_0" index="0" speed="13.89" length="22.20" shape="195.20,111.10 195.20,88.90"/>
-        <lane id=":junc_nw_4_1" index="1" speed="13.89" length="22.20" shape="198.40,111.10 198.40,88.90"/>
+        <lane id=":junc_nw_4_0" index="0" disallow="bicycle" speed="13.89" length="22.20" shape="195.20,111.10 195.20,88.90"/>
+        <lane id=":junc_nw_4_1" index="1" disallow="bicycle" speed="13.89" length="22.20" shape="198.40,111.10 198.40,88.90"/>
     </edge>
     <edge id=":junc_nw_6" function="internal">
-        <lane id=":junc_nw_6_0" index="0" speed="9.51" length="1.38" shape="198.40,111.10 198.60,109.73"/>
+        <lane id=":junc_nw_6_0" index="0" disallow="bicycle" speed="9.51" length="1.38" shape="198.40,111.10 198.60,109.73"/>
     </edge>
     <edge id=":junc_nw_28" function="internal">
         <lane id=":junc_nw_28_0" index="0" allow="bicycle" speed="11.57" length="30.48" shape="192.05,110.78 193.19,102.74 196.78,96.77 202.74,93.19 211.10,92.00"/>
     </edge>
     <edge id=":junc_nw_29" function="internal">
-        <lane id=":junc_nw_29_0" index="0" speed="9.51" length="19.10" shape="198.60,109.73 199.19,105.54 201.58,101.57 205.54,99.19 211.10,98.40"/>
+        <lane id=":junc_nw_29_0" index="0" disallow="bicycle" speed="9.51" length="19.10" shape="198.60,109.73 199.19,105.54 201.58,101.57 205.54,99.19 211.10,98.40"/>
     </edge>
     <edge id=":junc_nw_7" function="internal">
         <lane id=":junc_nw_7_0" index="0" allow="bicycle" speed="5.04" length="5.00" shape="211.10,108.00 209.74,108.19 208.78,108.78 208.19,109.74 208.00,111.10"/>
@@ -163,14 +163,14 @@
         <lane id=":junc_nw_9_0" index="0" allow="bicycle" speed="11.57" length="30.80" shape="211.10,108.00 202.74,106.81 196.78,103.22 193.19,97.26 192.00,88.90"/>
     </edge>
     <edge id=":junc_nw_10" function="internal">
-        <lane id=":junc_nw_10_0" index="0" speed="6.86" length="10.16" shape="211.10,104.80 208.34,105.19 206.38,106.38 205.19,108.34 204.80,111.10"/>
+        <lane id=":junc_nw_10_0" index="0" disallow="bicycle" speed="6.86" length="10.16" shape="211.10,104.80 208.34,105.19 206.38,106.38 205.19,108.34 204.80,111.10"/>
     </edge>
     <edge id=":junc_nw_11" function="internal">
-        <lane id=":junc_nw_11_0" index="0" speed="13.89" length="22.20" shape="211.10,104.80 188.90,104.80"/>
-        <lane id=":junc_nw_11_1" index="1" speed="13.89" length="22.20" shape="211.10,101.60 188.90,101.60"/>
+        <lane id=":junc_nw_11_0" index="0" disallow="bicycle" speed="13.89" length="22.20" shape="211.10,104.80 188.90,104.80"/>
+        <lane id=":junc_nw_11_1" index="1" disallow="bicycle" speed="13.89" length="22.20" shape="211.10,101.60 188.90,101.60"/>
     </edge>
     <edge id=":junc_nw_13" function="internal">
-        <lane id=":junc_nw_13_0" index="0" speed="9.51" length="20.48" shape="211.10,101.60 205.54,100.81 201.57,98.42 199.19,94.46 198.40,88.90"/>
+        <lane id=":junc_nw_13_0" index="0" disallow="bicycle" speed="9.51" length="20.48" shape="211.10,101.60 205.54,100.81 201.57,98.42 199.19,94.46 198.40,88.90"/>
     </edge>
     <edge id=":junc_nw_14" function="internal">
         <lane id=":junc_nw_14_0" index="0" allow="bicycle" speed="5.04" length="5.00" shape="208.00,88.90 208.19,90.26 208.78,91.22 209.74,91.81 211.10,92.00"/>
@@ -182,20 +182,20 @@
         <lane id=":junc_nw_16_0" index="0" allow="bicycle" speed="11.57" length="0.32" shape="208.00,88.90 207.95,89.22"/>
     </edge>
     <edge id=":junc_nw_17" function="internal">
-        <lane id=":junc_nw_17_0" index="0" speed="6.86" length="10.16" shape="204.80,88.90 205.19,91.66 206.38,93.63 208.34,94.81 211.10,95.20"/>
+        <lane id=":junc_nw_17_0" index="0" disallow="bicycle" speed="6.86" length="10.16" shape="204.80,88.90 205.19,91.66 206.38,93.63 208.34,94.81 211.10,95.20"/>
     </edge>
     <edge id=":junc_nw_18" function="internal">
-        <lane id=":junc_nw_18_0" index="0" speed="13.89" length="22.20" shape="204.80,88.90 204.80,111.10"/>
-        <lane id=":junc_nw_18_1" index="1" speed="13.89" length="22.20" shape="201.60,88.90 201.60,111.10"/>
+        <lane id=":junc_nw_18_0" index="0" disallow="bicycle" speed="13.89" length="22.20" shape="204.80,88.90 204.80,111.10"/>
+        <lane id=":junc_nw_18_1" index="1" disallow="bicycle" speed="13.89" length="22.20" shape="201.60,88.90 201.60,111.10"/>
     </edge>
     <edge id=":junc_nw_20" function="internal">
-        <lane id=":junc_nw_20_0" index="0" speed="9.51" length="1.38" shape="201.60,88.90 201.40,90.27"/>
+        <lane id=":junc_nw_20_0" index="0" disallow="bicycle" speed="9.51" length="1.38" shape="201.60,88.90 201.40,90.27"/>
     </edge>
     <edge id=":junc_nw_30" function="internal">
         <lane id=":junc_nw_30_0" index="0" allow="bicycle" speed="11.57" length="30.48" shape="207.95,89.22 206.81,97.26 203.22,103.22 197.26,106.81 188.90,108.00"/>
     </edge>
     <edge id=":junc_nw_31" function="internal">
-        <lane id=":junc_nw_31_0" index="0" speed="9.51" length="19.10" shape="201.40,90.27 200.81,94.46 198.42,98.43 194.46,100.81 188.90,101.60"/>
+        <lane id=":junc_nw_31_0" index="0" disallow="bicycle" speed="9.51" length="19.10" shape="201.40,90.27 200.81,94.46 198.42,98.43 194.46,100.81 188.90,101.60"/>
     </edge>
     <edge id=":junc_nw_21" function="internal">
         <lane id=":junc_nw_21_0" index="0" allow="bicycle" speed="5.04" length="5.00" shape="188.90,92.00 190.26,91.81 191.22,91.22 191.81,90.26 192.00,88.90"/>
@@ -207,14 +207,14 @@
         <lane id=":junc_nw_23_0" index="0" allow="bicycle" speed="11.57" length="30.80" shape="188.90,92.00 197.26,93.19 203.22,96.78 206.81,102.74 208.00,111.10"/>
     </edge>
     <edge id=":junc_nw_24" function="internal">
-        <lane id=":junc_nw_24_0" index="0" speed="6.86" length="10.16" shape="188.90,95.20 191.66,94.81 193.62,93.62 194.81,91.66 195.20,88.90"/>
+        <lane id=":junc_nw_24_0" index="0" disallow="bicycle" speed="6.86" length="10.16" shape="188.90,95.20 191.66,94.81 193.62,93.62 194.81,91.66 195.20,88.90"/>
     </edge>
     <edge id=":junc_nw_25" function="internal">
-        <lane id=":junc_nw_25_0" index="0" speed="13.89" length="22.20" shape="188.90,95.20 211.10,95.20"/>
-        <lane id=":junc_nw_25_1" index="1" speed="13.89" length="22.20" shape="188.90,98.40 211.10,98.40"/>
+        <lane id=":junc_nw_25_0" index="0" disallow="bicycle" speed="13.89" length="22.20" shape="188.90,95.20 211.10,95.20"/>
+        <lane id=":junc_nw_25_1" index="1" disallow="bicycle" speed="13.89" length="22.20" shape="188.90,98.40 211.10,98.40"/>
     </edge>
     <edge id=":junc_nw_27" function="internal">
-        <lane id=":junc_nw_27_0" index="0" speed="9.51" length="20.48" shape="188.90,98.40 194.46,99.19 198.43,101.58 200.81,105.54 201.60,111.10"/>
+        <lane id=":junc_nw_27_0" index="0" disallow="bicycle" speed="9.51" length="20.48" shape="188.90,98.40 194.46,99.19 198.43,101.58 200.81,105.54 201.60,111.10"/>
     </edge>
     <edge id=":junc_se_0" function="internal">
         <lane id=":junc_se_0_0" index="0" allow="bicycle" speed="5.04" length="5.00" shape="392.00,-88.90 391.81,-90.26 391.23,-91.22 390.26,-91.81 388.90,-92.00"/>
@@ -226,20 +226,20 @@
         <lane id=":junc_se_2_0" index="0" allow="bicycle" speed="11.57" length="0.32" shape="392.00,-88.90 392.05,-89.22"/>
     </edge>
     <edge id=":junc_se_3" function="internal">
-        <lane id=":junc_se_3_0" index="0" speed="6.86" length="10.16" shape="395.20,-88.90 394.81,-91.66 393.62,-93.62 391.66,-94.81 388.90,-95.20"/>
+        <lane id=":junc_se_3_0" index="0" disallow="bicycle" speed="6.86" length="10.16" shape="395.20,-88.90 394.81,-91.66 393.62,-93.62 391.66,-94.81 388.90,-95.20"/>
     </edge>
     <edge id=":junc_se_4" function="internal">
-        <lane id=":junc_se_4_0" index="0" speed="13.89" length="22.20" shape="395.20,-88.90 395.20,-111.10"/>
-        <lane id=":junc_se_4_1" index="1" speed="13.89" length="22.20" shape="398.40,-88.90 398.40,-111.10"/>
+        <lane id=":junc_se_4_0" index="0" disallow="bicycle" speed="13.89" length="22.20" shape="395.20,-88.90 395.20,-111.10"/>
+        <lane id=":junc_se_4_1" index="1" disallow="bicycle" speed="13.89" length="22.20" shape="398.40,-88.90 398.40,-111.10"/>
     </edge>
     <edge id=":junc_se_6" function="internal">
-        <lane id=":junc_se_6_0" index="0" speed="9.51" length="1.38" shape="398.40,-88.90 398.60,-90.27"/>
+        <lane id=":junc_se_6_0" index="0" disallow="bicycle" speed="9.51" length="1.38" shape="398.40,-88.90 398.60,-90.27"/>
     </edge>
     <edge id=":junc_se_28" function="internal">
         <lane id=":junc_se_28_0" index="0" allow="bicycle" speed="11.57" length="30.48" shape="392.05,-89.22 393.19,-97.26 396.77,-103.22 402.74,-106.81 411.10,-108.00"/>
     </edge>
     <edge id=":junc_se_29" function="internal">
-        <lane id=":junc_se_29_0" index="0" speed="9.51" length="19.10" shape="398.60,-90.27 399.19,-94.46 401.57,-98.43 405.54,-100.81 411.10,-101.60"/>
+        <lane id=":junc_se_29_0" index="0" disallow="bicycle" speed="9.51" length="19.10" shape="398.60,-90.27 399.19,-94.46 401.57,-98.43 405.54,-100.81 411.10,-101.60"/>
     </edge>
     <edge id=":junc_se_7" function="internal">
         <lane id=":junc_se_7_0" index="0" allow="bicycle" speed="5.04" length="5.00" shape="411.10,-92.00 409.74,-91.81 408.77,-91.22 408.19,-90.26 408.00,-88.90"/>
@@ -251,14 +251,14 @@
         <lane id=":junc_se_9_0" index="0" allow="bicycle" speed="11.57" length="30.80" shape="411.10,-92.00 402.74,-93.19 396.77,-96.78 393.19,-102.74 392.00,-111.10"/>
     </edge>
     <edge id=":junc_se_10" function="internal">
-        <lane id=":junc_se_10_0" index="0" speed="6.86" length="10.16" shape="411.10,-95.20 408.34,-94.81 406.38,-93.62 405.19,-91.66 404.80,-88.90"/>
+        <lane id=":junc_se_10_0" index="0" disallow="bicycle" speed="6.86" length="10.16" shape="411.10,-95.20 408.34,-94.81 406.38,-93.62 405.19,-91.66 404.80,-88.90"/>
     </edge>
     <edge id=":junc_se_11" function="internal">
-        <lane id=":junc_se_11_0" index="0" speed="13.89" length="22.20" shape="411.10,-95.20 388.90,-95.20"/>
-        <lane id=":junc_se_11_1" index="1" speed="13.89" length="22.20" shape="411.10,-98.40 388.90,-98.40"/>
+        <lane id=":junc_se_11_0" index="0" disallow="bicycle" speed="13.89" length="22.20" shape="411.10,-95.20 388.90,-95.20"/>
+        <lane id=":junc_se_11_1" index="1" disallow="bicycle" speed="13.89" length="22.20" shape="411.10,-98.40 388.90,-98.40"/>
     </edge>
     <edge id=":junc_se_13" function="internal">
-        <lane id=":junc_se_13_0" index="0" speed="9.51" length="20.48" shape="411.10,-98.40 405.54,-99.19 401.58,-101.58 399.19,-105.54 398.40,-111.10"/>
+        <lane id=":junc_se_13_0" index="0" disallow="bicycle" speed="9.51" length="20.48" shape="411.10,-98.40 405.54,-99.19 401.58,-101.58 399.19,-105.54 398.40,-111.10"/>
     </edge>
     <edge id=":junc_se_14" function="internal">
         <lane id=":junc_se_14_0" index="0" allow="bicycle" speed="5.04" length="5.00" shape="408.00,-111.10 408.19,-109.74 408.77,-108.77 409.74,-108.19 411.10,-108.00"/>
@@ -270,20 +270,20 @@
         <lane id=":junc_se_16_0" index="0" allow="bicycle" speed="11.57" length="0.32" shape="408.00,-111.10 407.95,-110.78"/>
     </edge>
     <edge id=":junc_se_17" function="internal">
-        <lane id=":junc_se_17_0" index="0" speed="6.86" length="10.16" shape="404.80,-111.10 405.19,-108.34 406.38,-106.38 408.34,-105.19 411.10,-104.80"/>
+        <lane id=":junc_se_17_0" index="0" disallow="bicycle" speed="6.86" length="10.16" shape="404.80,-111.10 405.19,-108.34 406.38,-106.38 408.34,-105.19 411.10,-104.80"/>
     </edge>
     <edge id=":junc_se_18" function="internal">
-        <lane id=":junc_se_18_0" index="0" speed="13.89" length="22.20" shape="404.80,-111.10 404.80,-88.90"/>
-        <lane id=":junc_se_18_1" index="1" speed="13.89" length="22.20" shape="401.60,-111.10 401.60,-88.90"/>
+        <lane id=":junc_se_18_0" index="0" disallow="bicycle" speed="13.89" length="22.20" shape="404.80,-111.10 404.80,-88.90"/>
+        <lane id=":junc_se_18_1" index="1" disallow="bicycle" speed="13.89" length="22.20" shape="401.60,-111.10 401.60,-88.90"/>
     </edge>
     <edge id=":junc_se_20" function="internal">
-        <lane id=":junc_se_20_0" index="0" speed="9.51" length="1.38" shape="401.60,-111.10 401.40,-109.73"/>
+        <lane id=":junc_se_20_0" index="0" disallow="bicycle" speed="9.51" length="1.38" shape="401.60,-111.10 401.40,-109.73"/>
     </edge>
     <edge id=":junc_se_30" function="internal">
         <lane id=":junc_se_30_0" index="0" allow="bicycle" speed="11.57" length="30.48" shape="407.95,-110.78 406.81,-102.74 403.23,-96.78 397.26,-93.19 388.90,-92.00"/>
     </edge>
     <edge id=":junc_se_31" function="internal">
-        <lane id=":junc_se_31_0" index="0" speed="9.51" length="19.10" shape="401.40,-109.73 400.81,-105.54 398.43,-101.57 394.46,-99.19 388.90,-98.40"/>
+        <lane id=":junc_se_31_0" index="0" disallow="bicycle" speed="9.51" length="19.10" shape="401.40,-109.73 400.81,-105.54 398.43,-101.57 394.46,-99.19 388.90,-98.40"/>
     </edge>
     <edge id=":junc_se_21" function="internal">
         <lane id=":junc_se_21_0" index="0" allow="bicycle" speed="5.04" length="5.00" shape="388.90,-108.00 390.26,-108.19 391.23,-108.78 391.81,-109.74 392.00,-111.10"/>
@@ -295,14 +295,14 @@
         <lane id=":junc_se_23_0" index="0" allow="bicycle" speed="11.57" length="30.80" shape="388.90,-108.00 397.26,-106.81 403.23,-103.22 406.81,-97.26 408.00,-88.90"/>
     </edge>
     <edge id=":junc_se_24" function="internal">
-        <lane id=":junc_se_24_0" index="0" speed="6.86" length="10.16" shape="388.90,-104.80 391.66,-105.19 393.62,-106.38 394.81,-108.34 395.20,-111.10"/>
+        <lane id=":junc_se_24_0" index="0" disallow="bicycle" speed="6.86" length="10.16" shape="388.90,-104.80 391.66,-105.19 393.62,-106.38 394.81,-108.34 395.20,-111.10"/>
     </edge>
     <edge id=":junc_se_25" function="internal">
-        <lane id=":junc_se_25_0" index="0" speed="13.89" length="22.20" shape="388.90,-104.80 411.10,-104.80"/>
-        <lane id=":junc_se_25_1" index="1" speed="13.89" length="22.20" shape="388.90,-101.60 411.10,-101.60"/>
+        <lane id=":junc_se_25_0" index="0" disallow="bicycle" speed="13.89" length="22.20" shape="388.90,-104.80 411.10,-104.80"/>
+        <lane id=":junc_se_25_1" index="1" disallow="bicycle" speed="13.89" length="22.20" shape="388.90,-101.60 411.10,-101.60"/>
     </edge>
     <edge id=":junc_se_27" function="internal">
-        <lane id=":junc_se_27_0" index="0" speed="9.51" length="20.48" shape="388.90,-101.60 394.46,-100.81 398.42,-98.42 400.81,-94.46 401.60,-88.90"/>
+        <lane id=":junc_se_27_0" index="0" disallow="bicycle" speed="9.51" length="20.48" shape="388.90,-101.60 394.46,-100.81 398.42,-98.42 400.81,-94.46 401.60,-88.90"/>
     </edge>
     <edge id=":junc_sw_0" function="internal">
         <lane id=":junc_sw_0_0" index="0" allow="bicycle" speed="5.04" length="5.00" shape="192.00,-88.90 191.81,-90.26 191.22,-91.22 190.26,-91.81 188.90,-92.00"/>
@@ -314,20 +314,20 @@
         <lane id=":junc_sw_2_0" index="0" allow="bicycle" speed="11.57" length="0.32" shape="192.00,-88.90 192.05,-89.22"/>
     </edge>
     <edge id=":junc_sw_3" function="internal">
-        <lane id=":junc_sw_3_0" index="0" speed="6.86" length="10.16" shape="195.20,-88.90 194.81,-91.66 193.62,-93.63 191.66,-94.81 188.90,-95.20"/>
+        <lane id=":junc_sw_3_0" index="0" disallow="bicycle" speed="6.86" length="10.16" shape="195.20,-88.90 194.81,-91.66 193.62,-93.63 191.66,-94.81 188.90,-95.20"/>
     </edge>
     <edge id=":junc_sw_4" function="internal">
-        <lane id=":junc_sw_4_0" index="0" speed="13.89" length="22.20" shape="195.20,-88.90 195.20,-111.10"/>
-        <lane id=":junc_sw_4_1" index="1" speed="13.89" length="22.20" shape="198.40,-88.90 198.40,-111.10"/>
+        <lane id=":junc_sw_4_0" index="0" disallow="bicycle" speed="13.89" length="22.20" shape="195.20,-88.90 195.20,-111.10"/>
+        <lane id=":junc_sw_4_1" index="1" disallow="bicycle" speed="13.89" length="22.20" shape="198.40,-88.90 198.40,-111.10"/>
     </edge>
     <edge id=":junc_sw_6" function="internal">
-        <lane id=":junc_sw_6_0" index="0" speed="9.51" length="1.38" shape="198.40,-88.90 198.60,-90.27"/>
+        <lane id=":junc_sw_6_0" index="0" disallow="bicycle" speed="9.51" length="1.38" shape="198.40,-88.90 198.60,-90.27"/>
     </edge>
     <edge id=":junc_sw_28" function="internal">
         <lane id=":junc_sw_28_0" index="0" allow="bicycle" speed="11.57" length="30.48" shape="192.05,-89.22 193.19,-97.26 196.78,-103.22 202.74,-106.81 211.10,-108.00"/>
     </edge>
     <edge id=":junc_sw_29" function="internal">
-        <lane id=":junc_sw_29_0" index="0" speed="9.51" length="19.10" shape="198.60,-90.27 199.19,-94.46 201.58,-98.43 205.54,-100.81 211.10,-101.60"/>
+        <lane id=":junc_sw_29_0" index="0" disallow="bicycle" speed="9.51" length="19.10" shape="198.60,-90.27 199.19,-94.46 201.58,-98.43 205.54,-100.81 211.10,-101.60"/>
     </edge>
     <edge id=":junc_sw_7" function="internal">
         <lane id=":junc_sw_7_0" index="0" allow="bicycle" speed="5.04" length="5.00" shape="211.10,-92.00 209.74,-91.81 208.78,-91.22 208.19,-90.26 208.00,-88.90"/>
@@ -339,14 +339,14 @@
         <lane id=":junc_sw_9_0" index="0" allow="bicycle" speed="11.57" length="30.80" shape="211.10,-92.00 202.74,-93.19 196.78,-96.78 193.19,-102.74 192.00,-111.10"/>
     </edge>
     <edge id=":junc_sw_10" function="internal">
-        <lane id=":junc_sw_10_0" index="0" speed="6.86" length="10.16" shape="211.10,-95.20 208.34,-94.81 206.38,-93.62 205.19,-91.66 204.80,-88.90"/>
+        <lane id=":junc_sw_10_0" index="0" disallow="bicycle" speed="6.86" length="10.16" shape="211.10,-95.20 208.34,-94.81 206.38,-93.62 205.19,-91.66 204.80,-88.90"/>
     </edge>
     <edge id=":junc_sw_11" function="internal">
-        <lane id=":junc_sw_11_0" index="0" speed="13.89" length="22.20" shape="211.10,-95.20 188.90,-95.20"/>
-        <lane id=":junc_sw_11_1" index="1" speed="13.89" length="22.20" shape="211.10,-98.40 188.90,-98.40"/>
+        <lane id=":junc_sw_11_0" index="0" disallow="bicycle" speed="13.89" length="22.20" shape="211.10,-95.20 188.90,-95.20"/>
+        <lane id=":junc_sw_11_1" index="1" disallow="bicycle" speed="13.89" length="22.20" shape="211.10,-98.40 188.90,-98.40"/>
     </edge>
     <edge id=":junc_sw_13" function="internal">
-        <lane id=":junc_sw_13_0" index="0" speed="9.51" length="20.48" shape="211.10,-98.40 205.54,-99.19 201.57,-101.58 199.19,-105.54 198.40,-111.10"/>
+        <lane id=":junc_sw_13_0" index="0" disallow="bicycle" speed="9.51" length="20.48" shape="211.10,-98.40 205.54,-99.19 201.57,-101.58 199.19,-105.54 198.40,-111.10"/>
     </edge>
     <edge id=":junc_sw_14" function="internal">
         <lane id=":junc_sw_14_0" index="0" allow="bicycle" speed="5.04" length="5.00" shape="208.00,-111.10 208.19,-109.74 208.78,-108.77 209.74,-108.19 211.10,-108.00"/>
@@ -358,20 +358,20 @@
         <lane id=":junc_sw_16_0" index="0" allow="bicycle" speed="11.57" length="0.32" shape="208.00,-111.10 207.95,-110.78"/>
     </edge>
     <edge id=":junc_sw_17" function="internal">
-        <lane id=":junc_sw_17_0" index="0" speed="6.86" length="10.16" shape="204.80,-111.10 205.19,-108.34 206.38,-106.38 208.34,-105.19 211.10,-104.80"/>
+        <lane id=":junc_sw_17_0" index="0" disallow="bicycle" speed="6.86" length="10.16" shape="204.80,-111.10 205.19,-108.34 206.38,-106.38 208.34,-105.19 211.10,-104.80"/>
     </edge>
     <edge id=":junc_sw_18" function="internal">
-        <lane id=":junc_sw_18_0" index="0" speed="13.89" length="22.20" shape="204.80,-111.10 204.80,-88.90"/>
-        <lane id=":junc_sw_18_1" index="1" speed="13.89" length="22.20" shape="201.60,-111.10 201.60,-88.90"/>
+        <lane id=":junc_sw_18_0" index="0" disallow="bicycle" speed="13.89" length="22.20" shape="204.80,-111.10 204.80,-88.90"/>
+        <lane id=":junc_sw_18_1" index="1" disallow="bicycle" speed="13.89" length="22.20" shape="201.60,-111.10 201.60,-88.90"/>
     </edge>
     <edge id=":junc_sw_20" function="internal">
-        <lane id=":junc_sw_20_0" index="0" speed="9.51" length="1.38" shape="201.60,-111.10 201.40,-109.73"/>
+        <lane id=":junc_sw_20_0" index="0" disallow="bicycle" speed="9.51" length="1.38" shape="201.60,-111.10 201.40,-109.73"/>
     </edge>
     <edge id=":junc_sw_30" function="internal">
         <lane id=":junc_sw_30_0" index="0" allow="bicycle" speed="11.57" length="30.48" shape="207.95,-110.78 206.81,-102.74 203.22,-96.77 197.26,-93.19 188.90,-92.00"/>
     </edge>
     <edge id=":junc_sw_31" function="internal">
-        <lane id=":junc_sw_31_0" index="0" speed="9.51" length="19.10" shape="201.40,-109.73 200.81,-105.54 198.42,-101.57 194.46,-99.19 188.90,-98.40"/>
+        <lane id=":junc_sw_31_0" index="0" disallow="bicycle" speed="9.51" length="19.10" shape="201.40,-109.73 200.81,-105.54 198.42,-101.57 194.46,-99.19 188.90,-98.40"/>
     </edge>
     <edge id=":junc_sw_21" function="internal">
         <lane id=":junc_sw_21_0" index="0" allow="bicycle" speed="5.04" length="5.00" shape="188.90,-108.00 190.26,-108.19 191.22,-108.78 191.81,-109.74 192.00,-111.10"/>
@@ -383,215 +383,215 @@
         <lane id=":junc_sw_23_0" index="0" allow="bicycle" speed="11.57" length="30.80" shape="188.90,-108.00 197.26,-106.81 203.22,-103.22 206.81,-97.26 208.00,-88.90"/>
     </edge>
     <edge id=":junc_sw_24" function="internal">
-        <lane id=":junc_sw_24_0" index="0" speed="6.86" length="10.16" shape="188.90,-104.80 191.66,-105.19 193.62,-106.38 194.81,-108.34 195.20,-111.10"/>
+        <lane id=":junc_sw_24_0" index="0" disallow="bicycle" speed="6.86" length="10.16" shape="188.90,-104.80 191.66,-105.19 193.62,-106.38 194.81,-108.34 195.20,-111.10"/>
     </edge>
     <edge id=":junc_sw_25" function="internal">
-        <lane id=":junc_sw_25_0" index="0" speed="13.89" length="22.20" shape="188.90,-104.80 211.10,-104.80"/>
-        <lane id=":junc_sw_25_1" index="1" speed="13.89" length="22.20" shape="188.90,-101.60 211.10,-101.60"/>
+        <lane id=":junc_sw_25_0" index="0" disallow="bicycle" speed="13.89" length="22.20" shape="188.90,-104.80 211.10,-104.80"/>
+        <lane id=":junc_sw_25_1" index="1" disallow="bicycle" speed="13.89" length="22.20" shape="188.90,-101.60 211.10,-101.60"/>
     </edge>
     <edge id=":junc_sw_27" function="internal">
-        <lane id=":junc_sw_27_0" index="0" speed="9.51" length="20.48" shape="188.90,-101.60 194.46,-100.81 198.43,-98.42 200.81,-94.46 201.60,-88.90"/>
+        <lane id=":junc_sw_27_0" index="0" disallow="bicycle" speed="9.51" length="20.48" shape="188.90,-101.60 194.46,-100.81 198.43,-98.42 200.81,-94.46 201.60,-88.90"/>
     </edge>
     <edge id=":waypoint_e_inner_0" function="internal">
         <lane id=":waypoint_e_inner_0_0" index="0" allow="bicycle" speed="13.89" length="0.10" shape="392.00,0.00 392.00,0.00"/>
-        <lane id=":waypoint_e_inner_0_1" index="1" speed="13.89" length="0.10" shape="395.20,0.00 395.20,0.00"/>
-        <lane id=":waypoint_e_inner_0_2" index="2" speed="13.89" length="0.10" shape="398.40,0.00 398.40,0.00"/>
+        <lane id=":waypoint_e_inner_0_1" index="1" disallow="bicycle" speed="13.89" length="0.10" shape="395.20,0.00 395.20,0.00"/>
+        <lane id=":waypoint_e_inner_0_2" index="2" disallow="bicycle" speed="13.89" length="0.10" shape="398.40,0.00 398.40,0.00"/>
     </edge>
     <edge id=":waypoint_e_inner_3" function="internal">
         <lane id=":waypoint_e_inner_3_0" index="0" allow="bicycle" speed="13.89" length="0.10" shape="408.00,0.00 408.00,0.00"/>
-        <lane id=":waypoint_e_inner_3_1" index="1" speed="13.89" length="0.10" shape="404.80,0.00 404.80,0.00"/>
-        <lane id=":waypoint_e_inner_3_2" index="2" speed="13.89" length="0.10" shape="401.60,0.00 401.60,0.00"/>
+        <lane id=":waypoint_e_inner_3_1" index="1" disallow="bicycle" speed="13.89" length="0.10" shape="404.80,0.00 404.80,0.00"/>
+        <lane id=":waypoint_e_inner_3_2" index="2" disallow="bicycle" speed="13.89" length="0.10" shape="401.60,0.00 401.60,0.00"/>
     </edge>
     <edge id=":waypoint_n_inner_0" function="internal">
         <lane id=":waypoint_n_inner_0_0" index="0" allow="bicycle" speed="13.89" length="0.10" shape="300.00,108.00 300.00,108.00"/>
-        <lane id=":waypoint_n_inner_0_1" index="1" speed="13.89" length="0.10" shape="300.00,104.80 300.00,104.80"/>
-        <lane id=":waypoint_n_inner_0_2" index="2" speed="13.89" length="0.10" shape="300.00,101.60 300.00,101.60"/>
+        <lane id=":waypoint_n_inner_0_1" index="1" disallow="bicycle" speed="13.89" length="0.10" shape="300.00,104.80 300.00,104.80"/>
+        <lane id=":waypoint_n_inner_0_2" index="2" disallow="bicycle" speed="13.89" length="0.10" shape="300.00,101.60 300.00,101.60"/>
     </edge>
     <edge id=":waypoint_n_inner_3" function="internal">
         <lane id=":waypoint_n_inner_3_0" index="0" allow="bicycle" speed="13.89" length="0.10" shape="300.00,92.00 300.00,92.00"/>
-        <lane id=":waypoint_n_inner_3_1" index="1" speed="13.89" length="0.10" shape="300.00,95.20 300.00,95.20"/>
-        <lane id=":waypoint_n_inner_3_2" index="2" speed="13.89" length="0.10" shape="300.00,98.40 300.00,98.40"/>
+        <lane id=":waypoint_n_inner_3_1" index="1" disallow="bicycle" speed="13.89" length="0.10" shape="300.00,95.20 300.00,95.20"/>
+        <lane id=":waypoint_n_inner_3_2" index="2" disallow="bicycle" speed="13.89" length="0.10" shape="300.00,98.40 300.00,98.40"/>
     </edge>
     <edge id=":waypoint_s_inner_0" function="internal">
         <lane id=":waypoint_s_inner_0_0" index="0" allow="bicycle" speed="13.89" length="0.10" shape="300.00,-92.00 300.00,-92.00"/>
-        <lane id=":waypoint_s_inner_0_1" index="1" speed="13.89" length="0.10" shape="300.00,-95.20 300.00,-95.20"/>
-        <lane id=":waypoint_s_inner_0_2" index="2" speed="13.89" length="0.10" shape="300.00,-98.40 300.00,-98.40"/>
+        <lane id=":waypoint_s_inner_0_1" index="1" disallow="bicycle" speed="13.89" length="0.10" shape="300.00,-95.20 300.00,-95.20"/>
+        <lane id=":waypoint_s_inner_0_2" index="2" disallow="bicycle" speed="13.89" length="0.10" shape="300.00,-98.40 300.00,-98.40"/>
     </edge>
     <edge id=":waypoint_s_inner_3" function="internal">
         <lane id=":waypoint_s_inner_3_0" index="0" allow="bicycle" speed="13.89" length="0.10" shape="300.00,-108.00 300.00,-108.00"/>
-        <lane id=":waypoint_s_inner_3_1" index="1" speed="13.89" length="0.10" shape="300.00,-104.80 300.00,-104.80"/>
-        <lane id=":waypoint_s_inner_3_2" index="2" speed="13.89" length="0.10" shape="300.00,-101.60 300.00,-101.60"/>
+        <lane id=":waypoint_s_inner_3_1" index="1" disallow="bicycle" speed="13.89" length="0.10" shape="300.00,-104.80 300.00,-104.80"/>
+        <lane id=":waypoint_s_inner_3_2" index="2" disallow="bicycle" speed="13.89" length="0.10" shape="300.00,-101.60 300.00,-101.60"/>
     </edge>
     <edge id=":waypoint_w_inner_0" function="internal">
         <lane id=":waypoint_w_inner_0_0" index="0" allow="bicycle" speed="13.89" length="0.10" shape="192.00,0.00 192.00,0.00"/>
-        <lane id=":waypoint_w_inner_0_1" index="1" speed="13.89" length="0.10" shape="195.20,0.00 195.20,0.00"/>
-        <lane id=":waypoint_w_inner_0_2" index="2" speed="13.89" length="0.10" shape="198.40,0.00 198.40,0.00"/>
+        <lane id=":waypoint_w_inner_0_1" index="1" disallow="bicycle" speed="13.89" length="0.10" shape="195.20,0.00 195.20,0.00"/>
+        <lane id=":waypoint_w_inner_0_2" index="2" disallow="bicycle" speed="13.89" length="0.10" shape="198.40,0.00 198.40,0.00"/>
     </edge>
     <edge id=":waypoint_w_inner_3" function="internal">
         <lane id=":waypoint_w_inner_3_0" index="0" allow="bicycle" speed="13.89" length="0.10" shape="208.00,0.00 208.00,0.00"/>
-        <lane id=":waypoint_w_inner_3_1" index="1" speed="13.89" length="0.10" shape="204.80,0.00 204.80,0.00"/>
-        <lane id=":waypoint_w_inner_3_2" index="2" speed="13.89" length="0.10" shape="201.60,0.00 201.60,0.00"/>
+        <lane id=":waypoint_w_inner_3_1" index="1" disallow="bicycle" speed="13.89" length="0.10" shape="204.80,0.00 204.80,0.00"/>
+        <lane id=":waypoint_w_inner_3_2" index="2" disallow="bicycle" speed="13.89" length="0.10" shape="201.60,0.00 201.60,0.00"/>
     </edge>
 
     <edge id="end_out_ne_east" from="junc_ne" to="waypoint_ne_east" priority="-1">
         <lane id="end_out_ne_east_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="411.10,92.00 500.00,92.00"/>
-        <lane id="end_out_ne_east_1" index="1" speed="13.89" length="88.90" shape="411.10,95.20 500.00,95.20"/>
-        <lane id="end_out_ne_east_2" index="2" speed="13.89" length="88.90" shape="411.10,98.40 500.00,98.40"/>
+        <lane id="end_out_ne_east_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="411.10,95.20 500.00,95.20"/>
+        <lane id="end_out_ne_east_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="411.10,98.40 500.00,98.40"/>
     </edge>
     <edge id="end_out_ne_north" from="junc_ne" to="waypoint_ne_north" priority="-1">
         <lane id="end_out_ne_north_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="408.00,111.10 408.00,200.00"/>
-        <lane id="end_out_ne_north_1" index="1" speed="13.89" length="88.90" shape="404.80,111.10 404.80,200.00"/>
-        <lane id="end_out_ne_north_2" index="2" speed="13.89" length="88.90" shape="401.60,111.10 401.60,200.00"/>
+        <lane id="end_out_ne_north_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="404.80,111.10 404.80,200.00"/>
+        <lane id="end_out_ne_north_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="401.60,111.10 401.60,200.00"/>
     </edge>
     <edge id="end_out_nw_north" from="junc_nw" to="waypoint_nw_north" priority="-1">
         <lane id="end_out_nw_north_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="208.00,111.10 208.00,200.00"/>
-        <lane id="end_out_nw_north_1" index="1" speed="13.89" length="88.90" shape="204.80,111.10 204.80,200.00"/>
-        <lane id="end_out_nw_north_2" index="2" speed="13.89" length="88.90" shape="201.60,111.10 201.60,200.00"/>
+        <lane id="end_out_nw_north_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="204.80,111.10 204.80,200.00"/>
+        <lane id="end_out_nw_north_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="201.60,111.10 201.60,200.00"/>
     </edge>
     <edge id="end_out_nw_west" from="junc_nw" to="waypoint_nw_west" priority="-1">
         <lane id="end_out_nw_west_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="188.90,108.00 100.00,108.00"/>
-        <lane id="end_out_nw_west_1" index="1" speed="13.89" length="88.90" shape="188.90,104.80 100.00,104.80"/>
-        <lane id="end_out_nw_west_2" index="2" speed="13.89" length="88.90" shape="188.90,101.60 100.00,101.60"/>
+        <lane id="end_out_nw_west_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="188.90,104.80 100.00,104.80"/>
+        <lane id="end_out_nw_west_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="188.90,101.60 100.00,101.60"/>
     </edge>
     <edge id="end_out_se_east" from="junc_se" to="waypoint_se_east" priority="-1">
         <lane id="end_out_se_east_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="411.10,-108.00 500.00,-108.00"/>
-        <lane id="end_out_se_east_1" index="1" speed="13.89" length="88.90" shape="411.10,-104.80 500.00,-104.80"/>
-        <lane id="end_out_se_east_2" index="2" speed="13.89" length="88.90" shape="411.10,-101.60 500.00,-101.60"/>
+        <lane id="end_out_se_east_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="411.10,-104.80 500.00,-104.80"/>
+        <lane id="end_out_se_east_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="411.10,-101.60 500.00,-101.60"/>
     </edge>
     <edge id="end_out_se_south" from="junc_se" to="waypoint_se_south" priority="-1">
         <lane id="end_out_se_south_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="392.00,-111.10 392.00,-200.00"/>
-        <lane id="end_out_se_south_1" index="1" speed="13.89" length="88.90" shape="395.20,-111.10 395.20,-200.00"/>
-        <lane id="end_out_se_south_2" index="2" speed="13.89" length="88.90" shape="398.40,-111.10 398.40,-200.00"/>
+        <lane id="end_out_se_south_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="395.20,-111.10 395.20,-200.00"/>
+        <lane id="end_out_se_south_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="398.40,-111.10 398.40,-200.00"/>
     </edge>
     <edge id="end_out_sw_south" from="junc_sw" to="waypoint_sw_south" priority="-1">
         <lane id="end_out_sw_south_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="192.00,-111.10 192.00,-200.00"/>
-        <lane id="end_out_sw_south_1" index="1" speed="13.89" length="88.90" shape="195.20,-111.10 195.20,-200.00"/>
-        <lane id="end_out_sw_south_2" index="2" speed="13.89" length="88.90" shape="198.40,-111.10 198.40,-200.00"/>
+        <lane id="end_out_sw_south_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="195.20,-111.10 195.20,-200.00"/>
+        <lane id="end_out_sw_south_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="198.40,-111.10 198.40,-200.00"/>
     </edge>
     <edge id="end_out_sw_west" from="junc_sw" to="waypoint_sw_west" priority="-1">
         <lane id="end_out_sw_west_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="188.90,-92.00 100.00,-92.00"/>
-        <lane id="end_out_sw_west_1" index="1" speed="13.89" length="88.90" shape="188.90,-95.20 100.00,-95.20"/>
-        <lane id="end_out_sw_west_2" index="2" speed="13.89" length="88.90" shape="188.90,-98.40 100.00,-98.40"/>
+        <lane id="end_out_sw_west_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="188.90,-95.20 100.00,-95.20"/>
+        <lane id="end_out_sw_west_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="188.90,-98.40 100.00,-98.40"/>
     </edge>
     <edge id="in_ne_south" from="waypoint_e_inner" to="junc_ne" priority="-1">
         <lane id="in_ne_south_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="408.00,0.00 408.00,88.90"/>
-        <lane id="in_ne_south_1" index="1" speed="13.89" length="88.90" shape="404.80,0.00 404.80,88.90"/>
-        <lane id="in_ne_south_2" index="2" speed="13.89" length="88.90" shape="401.60,0.00 401.60,88.90"/>
+        <lane id="in_ne_south_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="404.80,0.00 404.80,88.90"/>
+        <lane id="in_ne_south_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="401.60,0.00 401.60,88.90"/>
     </edge>
     <edge id="in_ne_west" from="waypoint_n_inner" to="junc_ne" priority="-1">
         <lane id="in_ne_west_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="300.00,92.00 388.90,92.00"/>
-        <lane id="in_ne_west_1" index="1" speed="13.89" length="88.90" shape="300.00,95.20 388.90,95.20"/>
-        <lane id="in_ne_west_2" index="2" speed="13.89" length="88.90" shape="300.00,98.40 388.90,98.40"/>
+        <lane id="in_ne_west_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="300.00,95.20 388.90,95.20"/>
+        <lane id="in_ne_west_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="300.00,98.40 388.90,98.40"/>
     </edge>
     <edge id="in_nw_east" from="waypoint_n_inner" to="junc_nw" priority="-1">
         <lane id="in_nw_east_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="300.00,108.00 211.10,108.00"/>
-        <lane id="in_nw_east_1" index="1" speed="13.89" length="88.90" shape="300.00,104.80 211.10,104.80"/>
-        <lane id="in_nw_east_2" index="2" speed="13.89" length="88.90" shape="300.00,101.60 211.10,101.60"/>
+        <lane id="in_nw_east_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="300.00,104.80 211.10,104.80"/>
+        <lane id="in_nw_east_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="300.00,101.60 211.10,101.60"/>
     </edge>
     <edge id="in_nw_south" from="waypoint_w_inner" to="junc_nw" priority="-1">
         <lane id="in_nw_south_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="208.00,0.00 208.00,88.90"/>
-        <lane id="in_nw_south_1" index="1" speed="13.89" length="88.90" shape="204.80,0.00 204.80,88.90"/>
-        <lane id="in_nw_south_2" index="2" speed="13.89" length="88.90" shape="201.60,0.00 201.60,88.90"/>
+        <lane id="in_nw_south_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="204.80,0.00 204.80,88.90"/>
+        <lane id="in_nw_south_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="201.60,0.00 201.60,88.90"/>
     </edge>
     <edge id="in_se_north" from="waypoint_e_inner" to="junc_se" priority="-1">
         <lane id="in_se_north_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="392.00,0.00 392.00,-88.90"/>
-        <lane id="in_se_north_1" index="1" speed="13.89" length="88.90" shape="395.20,0.00 395.20,-88.90"/>
-        <lane id="in_se_north_2" index="2" speed="13.89" length="88.90" shape="398.40,0.00 398.40,-88.90"/>
+        <lane id="in_se_north_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="395.20,0.00 395.20,-88.90"/>
+        <lane id="in_se_north_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="398.40,0.00 398.40,-88.90"/>
     </edge>
     <edge id="in_se_west" from="waypoint_s_inner" to="junc_se" priority="-1">
         <lane id="in_se_west_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="300.00,-108.00 388.90,-108.00"/>
-        <lane id="in_se_west_1" index="1" speed="13.89" length="88.90" shape="300.00,-104.80 388.90,-104.80"/>
-        <lane id="in_se_west_2" index="2" speed="13.89" length="88.90" shape="300.00,-101.60 388.90,-101.60"/>
+        <lane id="in_se_west_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="300.00,-104.80 388.90,-104.80"/>
+        <lane id="in_se_west_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="300.00,-101.60 388.90,-101.60"/>
     </edge>
     <edge id="in_sw_east" from="waypoint_s_inner" to="junc_sw" priority="-1">
         <lane id="in_sw_east_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="300.00,-92.00 211.10,-92.00"/>
-        <lane id="in_sw_east_1" index="1" speed="13.89" length="88.90" shape="300.00,-95.20 211.10,-95.20"/>
-        <lane id="in_sw_east_2" index="2" speed="13.89" length="88.90" shape="300.00,-98.40 211.10,-98.40"/>
+        <lane id="in_sw_east_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="300.00,-95.20 211.10,-95.20"/>
+        <lane id="in_sw_east_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="300.00,-98.40 211.10,-98.40"/>
     </edge>
     <edge id="in_sw_north" from="waypoint_w_inner" to="junc_sw" priority="-1">
         <lane id="in_sw_north_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="192.00,0.00 192.00,-88.90"/>
-        <lane id="in_sw_north_1" index="1" speed="13.89" length="88.90" shape="195.20,0.00 195.20,-88.90"/>
-        <lane id="in_sw_north_2" index="2" speed="13.89" length="88.90" shape="198.40,0.00 198.40,-88.90"/>
+        <lane id="in_sw_north_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="195.20,0.00 195.20,-88.90"/>
+        <lane id="in_sw_north_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="198.40,0.00 198.40,-88.90"/>
     </edge>
     <edge id="out_ne_south" from="junc_ne" to="waypoint_e_inner" priority="-1">
         <lane id="out_ne_south_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="392.00,88.90 392.00,0.00"/>
-        <lane id="out_ne_south_1" index="1" speed="13.89" length="88.90" shape="395.20,88.90 395.20,0.00"/>
-        <lane id="out_ne_south_2" index="2" speed="13.89" length="88.90" shape="398.40,88.90 398.40,0.00"/>
+        <lane id="out_ne_south_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="395.20,88.90 395.20,0.00"/>
+        <lane id="out_ne_south_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="398.40,88.90 398.40,0.00"/>
     </edge>
     <edge id="out_ne_west" from="junc_ne" to="waypoint_n_inner" priority="-1">
         <lane id="out_ne_west_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="388.90,108.00 300.00,108.00"/>
-        <lane id="out_ne_west_1" index="1" speed="13.89" length="88.90" shape="388.90,104.80 300.00,104.80"/>
-        <lane id="out_ne_west_2" index="2" speed="13.89" length="88.90" shape="388.90,101.60 300.00,101.60"/>
+        <lane id="out_ne_west_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="388.90,104.80 300.00,104.80"/>
+        <lane id="out_ne_west_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="388.90,101.60 300.00,101.60"/>
     </edge>
     <edge id="out_nw_east" from="junc_nw" to="waypoint_n_inner" priority="-1">
         <lane id="out_nw_east_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="211.10,92.00 300.00,92.00"/>
-        <lane id="out_nw_east_1" index="1" speed="13.89" length="88.90" shape="211.10,95.20 300.00,95.20"/>
-        <lane id="out_nw_east_2" index="2" speed="13.89" length="88.90" shape="211.10,98.40 300.00,98.40"/>
+        <lane id="out_nw_east_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="211.10,95.20 300.00,95.20"/>
+        <lane id="out_nw_east_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="211.10,98.40 300.00,98.40"/>
     </edge>
     <edge id="out_nw_south" from="junc_nw" to="waypoint_w_inner" priority="-1">
         <lane id="out_nw_south_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="192.00,88.90 192.00,0.00"/>
-        <lane id="out_nw_south_1" index="1" speed="13.89" length="88.90" shape="195.20,88.90 195.20,0.00"/>
-        <lane id="out_nw_south_2" index="2" speed="13.89" length="88.90" shape="198.40,88.90 198.40,0.00"/>
+        <lane id="out_nw_south_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="195.20,88.90 195.20,0.00"/>
+        <lane id="out_nw_south_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="198.40,88.90 198.40,0.00"/>
     </edge>
     <edge id="out_se_north" from="junc_se" to="waypoint_e_inner" priority="-1">
         <lane id="out_se_north_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="408.00,-88.90 408.00,0.00"/>
-        <lane id="out_se_north_1" index="1" speed="13.89" length="88.90" shape="404.80,-88.90 404.80,0.00"/>
-        <lane id="out_se_north_2" index="2" speed="13.89" length="88.90" shape="401.60,-88.90 401.60,0.00"/>
+        <lane id="out_se_north_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="404.80,-88.90 404.80,0.00"/>
+        <lane id="out_se_north_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="401.60,-88.90 401.60,0.00"/>
     </edge>
     <edge id="out_se_west" from="junc_se" to="waypoint_s_inner" priority="-1">
         <lane id="out_se_west_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="388.90,-92.00 300.00,-92.00"/>
-        <lane id="out_se_west_1" index="1" speed="13.89" length="88.90" shape="388.90,-95.20 300.00,-95.20"/>
-        <lane id="out_se_west_2" index="2" speed="13.89" length="88.90" shape="388.90,-98.40 300.00,-98.40"/>
+        <lane id="out_se_west_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="388.90,-95.20 300.00,-95.20"/>
+        <lane id="out_se_west_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="388.90,-98.40 300.00,-98.40"/>
     </edge>
     <edge id="out_sw_east" from="junc_sw" to="waypoint_s_inner" priority="-1">
         <lane id="out_sw_east_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="211.10,-108.00 300.00,-108.00"/>
-        <lane id="out_sw_east_1" index="1" speed="13.89" length="88.90" shape="211.10,-104.80 300.00,-104.80"/>
-        <lane id="out_sw_east_2" index="2" speed="13.89" length="88.90" shape="211.10,-101.60 300.00,-101.60"/>
+        <lane id="out_sw_east_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="211.10,-104.80 300.00,-104.80"/>
+        <lane id="out_sw_east_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="211.10,-101.60 300.00,-101.60"/>
     </edge>
     <edge id="out_sw_north" from="junc_sw" to="waypoint_w_inner" priority="-1">
         <lane id="out_sw_north_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="208.00,-88.90 208.00,0.00"/>
-        <lane id="out_sw_north_1" index="1" speed="13.89" length="88.90" shape="204.80,-88.90 204.80,0.00"/>
-        <lane id="out_sw_north_2" index="2" speed="13.89" length="88.90" shape="201.60,-88.90 201.60,0.00"/>
+        <lane id="out_sw_north_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="204.80,-88.90 204.80,0.00"/>
+        <lane id="out_sw_north_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="201.60,-88.90 201.60,0.00"/>
     </edge>
     <edge id="start_in_ne_east" from="waypoint_ne_east" to="junc_ne" priority="-1">
         <lane id="start_in_ne_east_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="500.00,108.00 411.10,108.00"/>
-        <lane id="start_in_ne_east_1" index="1" speed="13.89" length="88.90" shape="500.00,104.80 411.10,104.80"/>
-        <lane id="start_in_ne_east_2" index="2" speed="13.89" length="88.90" shape="500.00,101.60 411.10,101.60"/>
+        <lane id="start_in_ne_east_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="500.00,104.80 411.10,104.80"/>
+        <lane id="start_in_ne_east_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="500.00,101.60 411.10,101.60"/>
     </edge>
     <edge id="start_in_ne_north" from="waypoint_ne_north" to="junc_ne" priority="-1">
         <lane id="start_in_ne_north_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="392.00,200.00 392.00,111.10"/>
-        <lane id="start_in_ne_north_1" index="1" speed="13.89" length="88.90" shape="395.20,200.00 395.20,111.10"/>
-        <lane id="start_in_ne_north_2" index="2" speed="13.89" length="88.90" shape="398.40,200.00 398.40,111.10"/>
+        <lane id="start_in_ne_north_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="395.20,200.00 395.20,111.10"/>
+        <lane id="start_in_ne_north_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="398.40,200.00 398.40,111.10"/>
     </edge>
     <edge id="start_in_nw_north" from="waypoint_nw_north" to="junc_nw" priority="-1">
         <lane id="start_in_nw_north_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="192.00,200.00 192.00,111.10"/>
-        <lane id="start_in_nw_north_1" index="1" speed="13.89" length="88.90" shape="195.20,200.00 195.20,111.10"/>
-        <lane id="start_in_nw_north_2" index="2" speed="13.89" length="88.90" shape="198.40,200.00 198.40,111.10"/>
+        <lane id="start_in_nw_north_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="195.20,200.00 195.20,111.10"/>
+        <lane id="start_in_nw_north_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="198.40,200.00 198.40,111.10"/>
     </edge>
     <edge id="start_in_nw_west" from="waypoint_nw_west" to="junc_nw" priority="-1">
         <lane id="start_in_nw_west_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="100.00,92.00 188.90,92.00"/>
-        <lane id="start_in_nw_west_1" index="1" speed="13.89" length="88.90" shape="100.00,95.20 188.90,95.20"/>
-        <lane id="start_in_nw_west_2" index="2" speed="13.89" length="88.90" shape="100.00,98.40 188.90,98.40"/>
+        <lane id="start_in_nw_west_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="100.00,95.20 188.90,95.20"/>
+        <lane id="start_in_nw_west_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="100.00,98.40 188.90,98.40"/>
     </edge>
     <edge id="start_in_se_east" from="waypoint_se_east" to="junc_se" priority="-1">
         <lane id="start_in_se_east_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="500.00,-92.00 411.10,-92.00"/>
-        <lane id="start_in_se_east_1" index="1" speed="13.89" length="88.90" shape="500.00,-95.20 411.10,-95.20"/>
-        <lane id="start_in_se_east_2" index="2" speed="13.89" length="88.90" shape="500.00,-98.40 411.10,-98.40"/>
+        <lane id="start_in_se_east_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="500.00,-95.20 411.10,-95.20"/>
+        <lane id="start_in_se_east_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="500.00,-98.40 411.10,-98.40"/>
     </edge>
     <edge id="start_in_se_south" from="waypoint_se_south" to="junc_se" priority="-1">
         <lane id="start_in_se_south_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="408.00,-200.00 408.00,-111.10"/>
-        <lane id="start_in_se_south_1" index="1" speed="13.89" length="88.90" shape="404.80,-200.00 404.80,-111.10"/>
-        <lane id="start_in_se_south_2" index="2" speed="13.89" length="88.90" shape="401.60,-200.00 401.60,-111.10"/>
+        <lane id="start_in_se_south_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="404.80,-200.00 404.80,-111.10"/>
+        <lane id="start_in_se_south_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="401.60,-200.00 401.60,-111.10"/>
     </edge>
     <edge id="start_in_sw_south" from="waypoint_sw_south" to="junc_sw" priority="-1">
         <lane id="start_in_sw_south_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="208.00,-200.00 208.00,-111.10"/>
-        <lane id="start_in_sw_south_1" index="1" speed="13.89" length="88.90" shape="204.80,-200.00 204.80,-111.10"/>
-        <lane id="start_in_sw_south_2" index="2" speed="13.89" length="88.90" shape="201.60,-200.00 201.60,-111.10"/>
+        <lane id="start_in_sw_south_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="204.80,-200.00 204.80,-111.10"/>
+        <lane id="start_in_sw_south_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="201.60,-200.00 201.60,-111.10"/>
     </edge>
     <edge id="start_in_sw_west" from="waypoint_sw_west" to="junc_sw" priority="-1">
         <lane id="start_in_sw_west_0" index="0" allow="bicycle" speed="13.89" length="88.90" shape="100.00,-108.00 188.90,-108.00"/>
-        <lane id="start_in_sw_west_1" index="1" speed="13.89" length="88.90" shape="100.00,-104.80 188.90,-104.80"/>
-        <lane id="start_in_sw_west_2" index="2" speed="13.89" length="88.90" shape="100.00,-101.60 188.90,-101.60"/>
+        <lane id="start_in_sw_west_1" index="1" disallow="bicycle" speed="13.89" length="88.90" shape="100.00,-104.80 188.90,-104.80"/>
+        <lane id="start_in_sw_west_2" index="2" disallow="bicycle" speed="13.89" length="88.90" shape="100.00,-101.60 188.90,-101.60"/>
     </edge>
 
     <tlLogic id="junc_ne" type="static" programID="0" offset="0">
