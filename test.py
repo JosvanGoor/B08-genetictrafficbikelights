@@ -38,13 +38,23 @@ def generate_routes():
 
 
 generate_routes()
-
 traci.vehicle.add("newVeh_{}".format(0), "trip_{}".format(randint(0, numroutes - 1)), "default_bicycle")
 traci.vehicle.add("newVeh_{}".format(1), "trip_{}".format(randint(0, numroutes - 1)), "default_car")
 numveh = 2
 
+from tlscontroller import TlsController
+nw_controller = TlsController("junc_nw", True)
+ne_controller = TlsController("junc_ne", False)
+sw_controller = TlsController("junc_sw", True)
+se_controller = TlsController("junc_se", False)
+
 while step < 1000:
     traci.simulationStep()
+
+    nw_controller.update()
+    ne_controller.update()
+    sw_controller.update()
+    se_controller.update()
 
     if step % 5 == 0:
         traci.vehicle.add("newVeh_{}".format(numveh + 0), "trip_{}".format(randint(0, numroutes - 1)), "default_bicycle")
@@ -57,10 +67,6 @@ while step < 1000:
 # links = traci.trafficlight.getControlledLinks("junc_nw")
 # for link in links:
 #     print(link)
-
-
-from tlscontroller import TlsController
-controller = TlsController("junc_nw", True)
 
 from util import transition_program
 # print(transition_program(controller.states[1], controller.states[1]))
