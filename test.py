@@ -2,6 +2,7 @@ import traci
 import os
 from sumolib import checkBinary
 from random import randint
+from tlscontroller import TlsController
 
 # This makes sure that it works on both Windows and Unix
 if 'SUMO_HOME' in os.environ :
@@ -42,7 +43,7 @@ traci.vehicle.add("newVeh_{}".format(0), "trip_{}".format(randint(0, numroutes -
 traci.vehicle.add("newVeh_{}".format(1), "trip_{}".format(randint(0, numroutes - 1)), "default_car")
 numveh = 2
 
-from tlscontroller import TlsController
+
 nw_controller = TlsController("junc_nw", True)
 ne_controller = TlsController("junc_ne", False)
 sw_controller = TlsController("junc_sw", True)
@@ -68,7 +69,7 @@ while step < 1000:
 # for link in links:
 #     print(link)
 
-from util import transition_program
+# from util import transition_program
 # print(transition_program(controller.states[1], controller.states[1]))
 
 traci.close()
