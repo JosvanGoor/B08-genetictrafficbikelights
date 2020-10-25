@@ -27,37 +27,37 @@ class TlsController:
     def __init__(self, tls_id, group_bikelanes = False):
         print ("--- init tlscontroller {} ---".format(tls_id))
         self.tls_id = tls_id
-        self.programs = []
-
+        self.states = []
+        
         self.__init_lanes()
-        self.__init_bike_programs(group_bikelanes)
-        self.__init_car_programs()
+        self.__init_bike_states(group_bikelanes)
+        self.__init_car_states()
 
         print("- Lights")
         for lane in self.lanes:
             lane.print()
 
-        print("- Programs")
-        for program in self.programs:
-            print(program)
+        print("- States")
+        for state in self.states:
+            print(state)
         print ("--- done tlscontroller {} ---\n".format(tls_id))
 
 
     # Initialized tls programs for bikes
-    def __init_bike_programs(self, group):
+    def __init_bike_states(self, group):
         bikelanes = []
         for lane in self.lanes:
             if lane.bikelane:
                 bikelanes.append(lane)
 
         if group:
-            self.__gen_program(bikelanes)
+            self.__gen_state(bikelanes)
         else:
             for lane in bikelanes:
-                self.__gen_program([lane])
+                self.__gen_state([lane])
 
 
-    def __init_car_programs(self):
+    def __init_car_states(self):
         targets = \
         [
             [("north", ["south", "east"]), ("north", ["south", "west"])],
@@ -65,25 +65,25 @@ class TlsController:
             [("east", ["north", "west"]), ("east", ["south", "west"])],
             [("east", ["south", "west"]), ("west", ["north", "east"])],
             [("south", ["north", "west"]), ("south", ["north", "east"])],
-            [("west"), ("north", "east")], ("west", ["south", "east"])
+            [("west", ["north", "east"]), ("west", ["south", "east"])]
         ]
 
         for target in targets:
             lanes = []
             for lane in target:
                 lanes.append(self.find_lane(lane[0], lane[1])[0])
-            self.__gen_program(lanes)
+            self.__gen_state(lanes)
 
     
     # Generates (green) program for given set of lanes
-    def __gen_program(self, lanes):
-        program = ["r"] * self.numlights
+    def __gen_state(self, lanes):
+        state = ["r"] * self.numlights
 
         for lane in lanes:
             for idx in lane.tl_indices:
-                program[idx] = "G"
+                state[idx] = "G"
 
-        self.programs.append("".join(program))
+        self.states.append((20, "".join(state), len(self.states) - 1))
 
 
     # Gathers lane info, groups lights
