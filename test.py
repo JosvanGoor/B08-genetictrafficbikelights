@@ -37,13 +37,14 @@ traci.vehicle.add("newVeh_{}".format(0), "trip_{}".format(randint(0, numroutes -
 traci.vehicle.add("newVeh_{}".format(1), "trip_{}".format(randint(0, numroutes - 1)), "default_car")
 numveh = 2
 
-while step < 10000:
+while step < 1000:
     traci.simulationStep()
 
     if step % 5 == 0:
         traci.vehicle.add("newVeh_{}".format(numveh + 0), "trip_{}".format(randint(0, numroutes - 1)), "default_bicycle")
         traci.vehicle.add("newVeh_{}".format(numveh + 1), "trip_{}".format(randint(0, numroutes - 1)), "default_car")
         numveh += 2
+    step += 1
 
 
 ## Do stuff
@@ -56,6 +57,6 @@ from tlscontroller import TlsController
 controller = TlsController("junc_nw", True)
 
 from util import transition_program
-print(transition_program(controller.programs[1], controller.programs[1]))
+# print(transition_program(controller.states[1], controller.states[1]))
 
 traci.close()
