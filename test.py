@@ -1,4 +1,3 @@
-
 import traci
 import os
 from sumolib import checkBinary
