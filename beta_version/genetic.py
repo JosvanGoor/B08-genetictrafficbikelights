@@ -2,6 +2,7 @@ from tlscontroller import TlsController
 #from SUMOsim import SUMOsim
 import traci
 import math
+import numpy as np
 
 
 class Genetic:
@@ -14,10 +15,10 @@ class Genetic:
         self.tlights = traci.trafficlight.getIDList()
         self.lanes = {tl:traci.trafficlight.getControlledLanes(tl) for tl in self.tlights}
     
-    def setGenome(self,state):
+    def setGenome(self, state):
         pass
 
-    def getFitnessFunction(self,state):
+    def getFitnessFunction(self, state):
         fitness = 0
         #state = self.state
         self.setGenome(state)
@@ -39,28 +40,28 @@ class Genetic:
             return 1/math.log(fitness,10)
 
     #Cross 2 models randomly to get final model
-    def crossover(model1,model2):
+    def crossover(self, model1, model2):
         duration_1,state_1 = model1
         duration_2,state_2 = model2
         duration_final = []
         state_final = []
         for idx in range(len(duration_1)):
             if np.random.uniform() < 0.5:
-                duration_final.append(duration_1[i])
+                duration_final.append(duration_1[idx])
             else:
-                duration_final.append(duration_2[i])
+                duration_final.append(duration_2[idx])
         for idx in range(len(state_1)):
             if np.random.uniform() < 0.5:
-                duration_final.append(state_1[i])
+                duration_final.append(state_1[idx])
             else:
-                duration_final.append(state_2[i])
+                duration_final.append(state_2[idx])
         return duration_final,state_final
             
-    def mutation(durations, states, n_duration = duration_mutation_rate, n_state = states_mutation_rate, strength = duration_mutation_strengths):
+    def mutation(self, durations, states, n_duration , n_state , strength ):
         duration_cp = list(durations)
         state_cp = list(states)
         length = len(states)
-        ran_idx = np.where(np.random.uniform(size = length)<n_duration)[0]
+        ran_idx = np.where(np.random.uniform(size = length) < n_duration)[0]
         for idx in ran_idx:
             duration_cp[idx] += np.random.normal(scale = strength)
         for idx in range(length):
@@ -68,7 +69,7 @@ class Genetic:
             for num in np.where(np.random.uniform(size = length) < n_state)[0]:
                 state = np.random.choice([0,1])  
             state_cp[idx] = state
-        return duration_cp,state_cp
+        return duration_cp, state_cp
 
 
 

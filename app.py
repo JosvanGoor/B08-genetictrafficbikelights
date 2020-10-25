@@ -1,8 +1,15 @@
 import traci
+import os
 from random import randint
 from beta_version import tlscontroller as tlsc
+from sumolib import checkBinary
 
-SUMO_BINARY = "/usr/bin/sumo"
+# This makes sure that it works on both Windoews and Unix
+if 'SUMO_HOME' in os.environ :
+    SUMO_BINARY = checkBinary('sumo')       # for Win
+else :
+    SUMO_BINARY = "/usr/bin/sumo"           # for Unix
+
 SUMO_COMMAND = [SUMO_BINARY, "-c", "quadintersection/quad.sumocfg"]
 # end_nodes = ["edge_center_north", "edge_center_east", "edge_center_south", "edge_center_west"]
 # start_nodes = ["edge_north_center", "edge_east_center", "edge_south_center", "edge_west_center"]
