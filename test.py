@@ -36,9 +36,8 @@ def generate_routes():
             traci.route.add("trip_{}".format(numroutes), [startedges[start], endedges[end]])
             numroutes += 1
 
-
-
 generate_routes()
+
 traci.vehicle.add("newVeh_{}".format(0), "trip_{}".format(randint(0, numroutes - 1)), "default_bicycle")
 traci.vehicle.add("newVeh_{}".format(1), "trip_{}".format(randint(0, numroutes - 1)), "default_car")
 numveh = 2
