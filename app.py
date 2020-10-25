@@ -4,7 +4,7 @@ from random import randint
 from beta_version import tlscontroller as tlsc
 from sumolib import checkBinary
 
-# This makes sure that it works on both Windoews and Unix
+# This makes sure that it works on both Windows and Unix
 if 'SUMO_HOME' in os.environ :
     SUMO_BINARY = checkBinary('sumo')       # for Win
 else :
