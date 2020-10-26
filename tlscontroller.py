@@ -39,14 +39,14 @@ class TlsController:
         self.timer = self.current_state[0]
         traci.trafficlight.setRedYellowGreenState(self.tls_id, self.current_state[1])
 
-        print("- Lights")
-        for lane in self.lanes:
-            lane.print()
+        # print("- Lights")
+        # for lane in self.lanes:
+        #     lane.print()
 
-        print("- States")
-        for state in self.states:
-            print(state)
-        print ("--- done tlscontroller {} ---\n".format(tls_id))
+        # print("- States")
+        # for state in self.states:
+        #     print(state)
+        # print ("--- done tlscontroller {} ---\n".format(tls_id))
 
 
     def update(self):
@@ -70,7 +70,13 @@ class TlsController:
             self.transitioning = False
             traci.trafficlight.setRedYellowGreenState(self.tls_id, self.current_state[1])
 
-
+    def modify_states(self, state):
+        self.states = state
+        self.current_state = self.states[0]
+        self.transitioning = False
+        self.timer = self.current_state[0]
+        traci.trafficlight.setRedYellowGreenState(self.tls_id, self.current_state[1])
+    
     # Initialized tls programs for bikes
     def __init_bike_states(self, group):
         bikelanes = []

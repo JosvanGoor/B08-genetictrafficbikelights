@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 10/25/20 23:21:11 by Eclipse SUMO netedit Version 1.7.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="C:\Users\vladi\Desktop\DMAS\B08-genetictrafficbikelights\quadintersection\quad.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="C:\Users\vladi\Desktop\DMAS\B08-genetictrafficbikelights\quadintersection\quad.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.5"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+    <netedit>
+        <route-files value="C:\Users\vladi\Desktop\DMAS\B08-genetictrafficbikelights\quadintersection\test.rou.xml"/>
+    </netedit>
+
+    <report>
+        <aggregate-warnings value="5"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <route edges="start_in_ne_east end_out_ne_north" id="trip_0"/>
+    <route edges="start_in_ne_east end_out_nw_north" id="trip_1"/>
+    <route edges="start_in_ne_east end_out_nw_west" id="trip_2"/>
+    <route edges="start_in_ne_east end_out_se_east" id="trip_3"/>
+    <route edges="start_in_ne_east end_out_se_south" id="trip_4"/>
+    <route edges="start_in_ne_east end_out_sw_south" id="trip_5"/>
+    <route edges="start_in_ne_east end_out_sw_west" id="trip_6"/>
+    <route edges="start_in_ne_north end_out_ne_east" id="trip_7"/>
+    <route edges="start_in_ne_north end_out_nw_north" id="trip_8"/>
+    <route edges="start_in_ne_north end_out_nw_west" id="trip_9"/>
+    <route edges="start_in_ne_north end_out_se_east" id="trip_10"/>
+    <route edges="start_in_ne_north end_out_se_south" id="trip_11"/>
+    <route edges="start_in_ne_north end_out_sw_south" id="trip_12"/>
+    <route edges="start_in_ne_north end_out_sw_west" id="trip_13"/>
+    <route edges="start_in_nw_north end_out_ne_east" id="trip_14"/>
+    <route edges="start_in_nw_north end_out_ne_north" id="trip_15"/>
+    <route edges="start_in_nw_north end_out_nw_west" id="trip_16"/>
+    <route edges="start_in_nw_north end_out_se_east" id="trip_17"/>
+    <route edges="start_in_nw_north end_out_se_south" id="trip_18"/>
+    <route edges="start_in_nw_north end_out_sw_south" id="trip_19"/>
+    <route edges="start_in_nw_north end_out_sw_west" id="trip_20"/>
+    <route edges="start_in_nw_west end_out_ne_east" id="trip_21"/>
+    <route edges="start_in_nw_west end_out_ne_north" id="trip_22"/>
+    <route edges="start_in_nw_west end_out_nw_north" id="trip_23"/>
+    <route edges="start_in_nw_west end_out_se_east" id="trip_24"/>
+    <route edges="start_in_nw_west end_out_se_south" id="trip_25"/>
+    <route edges="start_in_nw_west end_out_sw_south" id="trip_26"/>
+    <route edges="start_in_nw_west end_out_sw_west" id="trip_27"/>
+    <route edges="start_in_se_east end_out_ne_east" id="trip_28"/>
+    <route edges="start_in_se_east end_out_ne_north" id="trip_29"/>
+    <route edges="start_in_se_east end_out_nw_north" id="trip_30"/>
+    <route edges="start_in_se_east end_out_nw_west" id="trip_31"/>
+    <route edges="start_in_se_east end_out_se_south" id="trip_32"/>
+    <route edges="start_in_se_east end_out_sw_south" id="trip_33"/>
+    <route edges="start_in_se_east end_out_sw_west" id="trip_34"/>
+    <route edges="start_in_se_south end_out_ne_east" id="trip_35"/>
+    <route edges="start_in_se_south end_out_ne_north" id="trip_36"/>
+    <route edges="start_in_se_south end_out_nw_north" id="trip_37"/>
+    <route edges="start_in_se_south end_out_nw_west" id="trip_38"/>
+    <route edges="start_in_se_south end_out_se_east" id="trip_39"/>
+    <route edges="start_in_se_south end_out_sw_south" id="trip_40"/>
+    <route edges="start_in_se_south end_out_sw_west" id="trip_41"/>
+    <route edges="start_in_sw_south end_out_ne_east" id="trip_42"/>
+    <route edges="start_in_sw_south end_out_ne_north" id="trip_43"/>
+    <route edges="start_in_sw_south end_out_nw_north" id="trip_44"/>
+    <route edges="start_in_sw_south end_out_nw_west" id="trip_45"/>
+    <route edges="start_in_sw_south end_out_se_east" id="trip_46"/>
+    <route edges="start_in_sw_south end_out_se_south" id="trip_47"/>
+    <route edges="start_in_sw_south end_out_sw_west" id="trip_48"/>
+    <route edges="start_in_sw_west end_out_ne_east" id="trip_49"/>
+    <route edges="start_in_sw_west end_out_ne_north" id="trip_50"/>
+    <route edges="start_in_sw_west end_out_nw_north" id="trip_51"/>
+    <route edges="start_in_sw_west end_out_nw_west" id="trip_52"/>
+    <route edges="start_in_sw_west end_out_se_east" id="trip_53"/>
+    <route edges="start_in_sw_west end_out_se_south" id="trip_54"/>
+    <route edges="start_in_sw_west end_out_sw_south" id="trip_55"/>
+</routes>

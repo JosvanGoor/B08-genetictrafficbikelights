@@ -1,46 +1,62 @@
 import numpy as np
 import traci
 import os
-from sumolib import checkBinary
 from random import randint
+from random import choice
+from random import shuffle
+from sumolib import checkBinary
 from tlscontroller import TlsController
+from runSimulation import runSimulation
 
-class gene:
-    def __init__(self, time, nextGenome):
-        self.time = time
-        self.next = nextGenome
-        
 class genetic:
     def __init__(self, state):
-        self.populationSize = 100
+        self.populationSize = 10
         self.maxTime = 60
         self.crossoverPoint = 3
         self.newPopulation = []
         self.mutationProbability = 0.01
-        self.population = self.generatePopulation(state)
+        self.initial = state
+        self.population = self.generatePopulation()
         self.fitnessValues = []
     
+    def ok(self, listToTest):
+        for idx in range(len(listToTest)):
+            if listToTest[idx] == idx:
+                return False
+        return True
+    
+    def newGenes(self, genome):
+        lightList = list(range(len(self.initial)))
+        while not self.ok(lightList):
+            shuffle(lightList)
+        for idx in range(len(lightList)):
+            genome.append((randint(10, 60), self.initial[idx][1], lightList[idx]))
+        
     # generate a new population
-    def generatePopulation(self, initial):
+    def generatePopulation(self):
         population = []
         for idx in range(0, self.populationSize):
             newGenome = []
-            for idx2 in range(0, len(initial)):
-                newGenome.append((randint(1, self.maxTime), initial[idx2][1], randint(0, len(newGenome))))
+            self.newGenes(newGenome)
             population.append(newGenome)        
         return population
     
     def run(self):
-        for idx in range(0,100):
+        for idx in range(0, 10):
             for genome in self.population:
-                self.fitnessValue.append(thisFunction(genome))
+                for light in genome:
+                    print(light)
+                self.fitnessValues.append(runSimulation(genome))
+                print(self.fitnessValues)
+            print("RUN {} OF 10".format(idx))
                 
             population = [idx for _,idx in sorted(zip(self.fitnessValues, self.population))]
             
             self.fitnessValues = sorted(self.fitnessValues)
+            print(self.fitnessValues)
             for genomes in population:
-                parent1 = population[np.random.choice(self.populationSize, 1, p = 1 / self.fitnessValues)]
-                parent2 = population[np.random.choice(self.populationSize, 1, p = 1 / self.fitnessValues)]
+                parent2 = population[np.random.choice(self.populationSize, 1, p = [1 / element for element in self.fitnessValues])]
+                parent1 = population[np.random.choice(self.populationSize, 1, p = [1 / element for element in self.fitnessValues])]
                 self.crossover(parent1, parent2)    
             self.population = self.newPopulation
             self.fitnessValues = []        
@@ -74,7 +90,5 @@ class genetic:
         else:
             pass            
     
-test = genetic()
-        
             
         

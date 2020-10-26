@@ -7,6 +7,7 @@
 
     <input>
         <net-file value="quad2.net.xml"/>
+        <route-files value="test.rou.xml"/>
         <additional-files value="quad.additional.xml"/>
         <!-- We use rout the second type of flow which is more realistic -->
         <!-- <route-files value="intersection2.rou.xml"/> -->
