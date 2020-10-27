@@ -19,18 +19,18 @@ class genetic:
         self.population = self.generatePopulation()
         self.fitnessValues = []
     
-    def ok(self, listToTest):
-        for idx in range(len(listToTest)):
-            if listToTest[idx] == idx:
-                return False
-        return True
+    # def ok(self, listToTest):
+    #     for idx in range(len(listToTest)):
+    #         if listToTest[idx] == idx:
+    #             return False
+    #     return True
     
     def newGenes(self, genome):
-        lightList = list(range(len(self.initial)))
-        while not self.ok(lightList):
-            shuffle(lightList)
-        for idx in range(len(lightList)):
-            genome.append((randint(10, 60), self.initial[idx][1], lightList[idx]))
+        # lightList = list(range(len(self.initial)))
+        # while not self.ok(lightList):
+        #     shuffle(lightList)
+        for idx in range(len(self.initial)):
+            genome.append((randint(1, 60), self.initial[idx][1], self.initial[idx][2]))
         
     # generate a new population
     def generatePopulation(self):
@@ -42,13 +42,13 @@ class genetic:
         return population
     
     def run(self):
-        for idx in range(0, 10):
+        for idx in range(10):
             for genome in self.population:
                 for light in genome:
                     print(light)
                 self.fitnessValues.append(runSimulation(genome))
                 print(self.fitnessValues)
-            print("RUN {} OF 10".format(idx))
+            print("RUN {} OF 10".format(idx + 1))
                 
             population = [idx for _,idx in sorted(zip(self.fitnessValues, self.population))]
             self.fitnessValues = sorted(self.fitnessValues)
@@ -57,14 +57,16 @@ class genetic:
             
             print(self.fitnessValues)
             print(prob)
-            for idx in range(int(len(population) / 2)):
+            for genome in range(5):
                 parent2 = population[np.random.choice(self.populationSize, 1, p = prob)[0]]
                 parent1 = population[np.random.choice(self.populationSize, 1, p = prob)[0]]
                 self.crossover(parent1, parent2)    
                 
             self.population = self.newPopulation
-            self.fitnessValues = []        
-        
+            self.fitnessValues = []
+            self.newPopulation = []        
+            print(len(self.population))
+                    
     # perform single-point crossover to produce 2 new offsprings
     def crossover(self, genome1, genome2):
         newGenome1 = []
@@ -90,8 +92,5 @@ class genetic:
         if np.random.random() <= self.mutationProbability:
             gene = genome[randint(0, len(genome))]
             gene[0] = randint(1, self.maxTime)                    # time
-            gene[2] = randint(0, len(genome))                     # next light
-        return genome            
-    
-            
-        
+            # gene[2] = randint(0, len(genome))                     # next light
+        return genome
