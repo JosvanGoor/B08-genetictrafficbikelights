@@ -51,13 +51,17 @@ class genetic:
             print("RUN {} OF 10".format(idx))
                 
             population = [idx for _,idx in sorted(zip(self.fitnessValues, self.population))]
-            
             self.fitnessValues = sorted(self.fitnessValues)
+            
+            prob = [(element / sum(self.fitnessValues)) for element in self.fitnessValues]
+            
             print(self.fitnessValues)
-            for genomes in population:
-                parent2 = population[np.random.choice(self.populationSize, 1, p = [1 / element for element in self.fitnessValues])]
-                parent1 = population[np.random.choice(self.populationSize, 1, p = [1 / element for element in self.fitnessValues])]
+            print(prob)
+            for idx in range(int(len(population) / 2)):
+                parent2 = population[np.random.choice(self.populationSize, 1, p = prob)[0]]
+                parent1 = population[np.random.choice(self.populationSize, 1, p = prob)[0]]
                 self.crossover(parent1, parent2)    
+                
             self.population = self.newPopulation
             self.fitnessValues = []        
         
@@ -67,18 +71,18 @@ class genetic:
         newGenome2 = []
         # copy genes from first parent
         for idx in range(0, self.crossoverPoint):
-            newGenome1[idx] = genome1[idx]
-            newGenome2[idx] = genome2[idx]
+            newGenome1.append(genome1[idx])
+            newGenome2.append(genome2[idx])
         # copy gene from second parent
-        for idx in range(self.crossoverPoint + 1, len(genome2)):
-            newGenome2[idx] = genome1[idx]
-            newGenome1[idx] = genome2[idx]
+        for idx in range(self.crossoverPoint, len(genome2)):
+            newGenome2.append(genome1[idx])
+            newGenome1.append(genome2[idx])
 
         # add the offsprings to the new population 
         # we also try to mutate them
-        self.newPopulation.append(mutation(newGenome1))
-        self.newPopulation.append(mutation(newGenome2))
-    
+        self.newPopulation.append(self.mutation(newGenome1))
+        self.newPopulation.append(self.mutation(newGenome2))
+          
     # function to try and mutate the genome by changing one its genes
     # in our case this means selecting a random traffic light configuration 
     # and changing its time and also the next light that is going to be green    
@@ -87,8 +91,7 @@ class genetic:
             gene = genome[randint(0, len(genome))]
             gene[0] = randint(1, self.maxTime)                    # time
             gene[2] = randint(0, len(genome))                     # next light
-        else:
-            pass            
+        return genome            
     
             
         
