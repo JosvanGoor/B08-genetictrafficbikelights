@@ -48,25 +48,26 @@ class genetic:
                     print(light)
                 self.fitnessValues.append(runSimulation(genome))
                 print(self.fitnessValues)
+                
             print("RUN {} OF 10".format(idx + 1))
-               
             population = [idx for _,idx in sorted(zip(self.fitnessValues, self.population), reverse = True)]
             self.fitnessValues = sorted(self.fitnessValues, reverse = True)
             prob = [(element / sum(self.fitnessValues)) for element in self.fitnessValues]
             print(prob)
 
-            elite = self.populationSize * 10 / 100      # 10%
-
+            elite = int(self.populationSize * 10 / 100)      # 10%    
             for pop_index in range(elite):              # copy the best chromosomes into the new population
                 self.newPopulation.append(population[pop_index])
 
-            for genome in range(5):
+            while len(self.newPopulation) < self.populationSize:
                 p1 = np.random.choice(self.populationSize, 1, p = prob)[0]
                 p2 = np.random.choice(self.populationSize, 1, p = prob)[0]
                 
-                parent2 = population[p1]
-                parent1 = population[p2]
-                self.crossover(parent1, parent2)    
+                parent1 = population[p1]
+                parent2 = population[p2]
+                self.crossover(parent1, parent2)
+                if len(self.newPopulation) > self.populationSize:
+                    self.newPopulation.pop()
                 
             self.population = self.newPopulation
             self.fitnessValues = []
