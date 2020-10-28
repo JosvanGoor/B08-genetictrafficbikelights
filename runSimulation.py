@@ -14,7 +14,7 @@ else :
 SUMO_COMMAND = [SUMO_BINARY, "-c", "quadintersection/quad.sumocfg"]
 numroutes = 55
 
-def runSimulation(geneticState):
+def runSimulation(chromosome):
     step = 0
     
     # Experiment options
@@ -33,10 +33,10 @@ def runSimulation(geneticState):
     sw_controller = TlsController("junc_sw", True)
     se_controller = TlsController("junc_se", True)
 
-    nw_controller.modify_states(geneticState)
-    ne_controller.modify_states(geneticState)
-    sw_controller.modify_states(geneticState)
-    se_controller.modify_states(geneticState)
+    nw_controller.modify_states(chromosome)
+    ne_controller.modify_states(chromosome)
+    sw_controller.modify_states(chromosome)
+    se_controller.modify_states(chromosome)
 
     while traci.vehicle.getIDCount() > 0 and step < timeOut:
 

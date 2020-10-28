@@ -18,6 +18,8 @@ class genetic:
         self.initial = state
         self.population = self.generatePopulation()
         self.fitnessValues = []
+        self.file = open("results.txt","a")
+        self.iterations = 10
     
     # def ok(self, listToTest):
     #     for idx in range(len(listToTest)):
@@ -42,21 +44,22 @@ class genetic:
         return population
     
     def run(self):
-        for idx in range(10):
+        for idx in range(self.iterations):
             for genome in self.population:
                 for light in genome:
                     print(light)
                 self.fitnessValues.append(runSimulation(genome))
-                print(self.fitnessValues)
-                
-            print("RUN {} OF 10".format(idx + 1))
+                                
+            self.file.write("RUN {} of {} \n".format(idx + 1, self.iterations))
+            
             population = [idx for _,idx in sorted(zip(self.fitnessValues, self.population), reverse = True)]
             self.fitnessValues = sorted(self.fitnessValues, reverse = True)
             prob = [(element / sum(self.fitnessValues)) for element in self.fitnessValues]
-            print(prob)
-
-            elite = int(self.populationSize * 10 / 100)      # 10%    
-            for pop_index in range(elite):              # copy the best chromosomes into the new population
+            
+            self.file.write("Avg. Fitness:{} sd {} \n".format(np.mean(self.fitnessValues), np.std(self.fitnessValues)))
+            
+            elite = int(self.populationSize * 10 / 100)         # 10%    
+            for pop_index in range(elite):                      # copy the best chromosomes into the new population
                 self.newPopulation.append(population[pop_index])
 
             while len(self.newPopulation) < self.populationSize:
@@ -71,7 +74,7 @@ class genetic:
                 
             self.population = self.newPopulation
             self.fitnessValues = []
-            self.newPopulation = []        
+            self.newPopulation = []
                     
     # perform single-point crossover to produce 2 new offsprings
     def crossover(self, genome1, genome2):
