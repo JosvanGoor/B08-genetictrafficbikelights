@@ -31,7 +31,7 @@ def runSimulation(chromosome):
     step = 0
     
     # Experiment options
-    numveh = 100                # How many vehicles to add to the simulation
+    numveh = 100               # How many vehicles to add to the simulation
     timeOut = 50000             # When should the simulation timeout    
     
     waiting = 0
@@ -61,7 +61,7 @@ def runSimulation(chromosome):
         sw_controller.update()
         se_controller.update()
 
-        if step % 5 == 0 and numveh:
+        if step % 10 == 0 and numveh:
             traci.vehicle.add("newVeh_{}".format(numveh + 0), "trip_{}".format(randint(0, numroutes - 1)), "default_bicycle")
             traci.vehicle.add("newVeh_{}".format(numveh + 1), "trip_{}".format(randint(0, numroutes - 1)), "default_car")
             numveh -= 2
@@ -71,5 +71,8 @@ def runSimulation(chromosome):
         driving += d
         traci.simulationStep()
         
-    fitnessValue = driving / waiting      
+    fitnessValue = driving / waiting  
+
+    traci.close()
+
     return fitnessValue

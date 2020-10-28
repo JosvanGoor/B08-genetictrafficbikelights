@@ -19,7 +19,7 @@ class genetic:
         self.population = self.generatePopulation()
         self.fitnessValues = []
         self.file = open("results.txt","a")
-        self.iterations = 10
+        self.iterations = 50
     
     # def ok(self, listToTest):
     #     for idx in range(len(listToTest)):

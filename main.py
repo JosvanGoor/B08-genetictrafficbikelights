@@ -19,6 +19,5 @@ traci.start(SUMO_COMMAND)
 initialState = TlsController("junc_nw", True).states
 traci.close()
 
-
 experiment = genetic(initialState)
 experiment.run()
