@@ -14,7 +14,7 @@ class genetic:
         self.maxTime = 60
         self.crossoverPoint = 3
         self.newPopulation = []
-        self.mutationProbability = 0.5
+        self.mutationProbability = 0.01
         self.initial = state
         self.population = self.generatePopulation()
         self.fitnessValues = []
@@ -50,8 +50,8 @@ class genetic:
                 print(self.fitnessValues)
             print("RUN {} OF 10".format(idx + 1))
                
-            population = [idx for _,idx in sorted(zip(self.fitnessValues, self.population))]
-            self.fitnessValues = sorted(self.fitnessValues)
+            population = [idx for _,idx in sorted(zip(self.fitnessValues, self.population), reverse = True)]
+            self.fitnessValues = sorted(self.fitnessValues, reverse = True)
             prob = [(element / sum(self.fitnessValues)) for element in self.fitnessValues]
             print(prob)
 
@@ -63,8 +63,7 @@ class genetic:
             for genome in range(5):
                 p1 = np.random.choice(self.populationSize, 1, p = prob)[0]
                 p2 = np.random.choice(self.populationSize, 1, p = prob)[0]
-                print("PARENT 1 is {}".format(p1))
-                print("PARENT 2 is {}".format(p2))
+                
                 parent2 = population[p1]
                 parent1 = population[p2]
                 self.crossover(parent1, parent2)    
@@ -72,7 +71,6 @@ class genetic:
             self.population = self.newPopulation
             self.fitnessValues = []
             self.newPopulation = []        
-            print(len(self.population))
                     
     # perform single-point crossover to produce 2 new offsprings
     def crossover(self, genome1, genome2):
@@ -92,13 +90,11 @@ class genetic:
         self.newPopulation.append(self.mutation(newGenome1))
         self.newPopulation.append(self.mutation(newGenome2))
           
-    # function to try and mutate the genome by changing one its genes
-    # in our case this means selecting a random traffic light configuration 
-    # and changing its time and also the next light that is going to be green    
-    def mutation(self, genome):
+    # function that modifies the times of a chromosomes    
+    def mutation(self, chromosome):
         if np.random.random() <= self.mutationProbability:
-            idx = randint(0, len(genome))
-            print(idx)
-            genome[idx][0] = randint(1, self.maxTime)                   # time
-            # gene[2] = randint(0, len(genome))                   # next light
-        return genome
+            newChromosome = []                                          # time
+            for idx in range(len(self.initial)):
+                newChromosome.append((randint(1, 60), self.initial[idx][1], self.initial[idx][2]))
+            return newChromosome
+        return chromosome
