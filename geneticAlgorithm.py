@@ -50,15 +50,13 @@ class genetic:
                 print(self.fitnessValues)
             print("RUN {} OF 10".format(idx + 1))
                
-            population = [idx for _,idx in sorted(zip(self.fitnessValues, self.population))]
-            self.fitnessValues = sorted(self.fitnessValues)
+            population = [idx for _,idx in sorted(zip(self.fitnessValues, self.population), reverse = True)]
+            self.fitnessValues = sorted(self.fitnessValues, reverse = True)
             prob = [(element / sum(self.fitnessValues)) for element in self.fitnessValues]
-            print(prob)
             for genome in range(5):
                 p1 = np.random.choice(self.populationSize, 1, p = prob)[0]
                 p2 = np.random.choice(self.populationSize, 1, p = prob)[0]
-                print("PARENT 1 is {}".format(p1))
-                print("PARENT 2 is {}".format(p2))
+                
                 parent2 = population[p1]
                 parent1 = population[p2]
                 self.crossover(parent1, parent2)    
@@ -66,7 +64,6 @@ class genetic:
             self.population = self.newPopulation
             self.fitnessValues = []
             self.newPopulation = []        
-            print(len(self.population))
                     
     # perform single-point crossover to produce 2 new offsprings
     def crossover(self, genome1, genome2):
