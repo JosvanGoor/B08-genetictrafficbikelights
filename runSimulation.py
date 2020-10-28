@@ -51,7 +51,7 @@ def runSimulation(chromosome):
             numveh -= 2
         step += 1
         traci.simulationStep()
-        
+
     fitnessValue = 1 / (step / 3600)      # How many irl hours did the simulation take
     traci.close()
     return fitnessValue

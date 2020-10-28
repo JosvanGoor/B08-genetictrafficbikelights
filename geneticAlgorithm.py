@@ -74,8 +74,8 @@ class genetic:
                 
             self.population = self.newPopulation
             self.fitnessValues = []
-            self.newPopulation = []
-                    
+            self.newPopulation = []   
+
     # perform single-point crossover to produce 2 new offsprings
     def crossover(self, genome1, genome2):
         newGenome1 = []
