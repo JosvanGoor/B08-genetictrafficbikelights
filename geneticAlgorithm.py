@@ -14,23 +14,23 @@ class genetic:
         self.maxTime = 60
         self.crossoverPoint = 3
         self.newPopulation = []
-        self.mutationProbability = 0.01
+        self.mutationProbability = 0.5
         self.initial = state
         self.population = self.generatePopulation()
         self.fitnessValues = []
     
-    def ok(self, listToTest):
-        for idx in range(len(listToTest)):
-            if listToTest[idx] == idx:
-                return False
-        return True
+    # def ok(self, listToTest):
+    #     for idx in range(len(listToTest)):
+    #         if listToTest[idx] == idx:
+    #             return False
+    #     return True
     
     def newGenes(self, genome):
-        lightList = list(range(len(self.initial)))
-        #while not self.ok(lightList):
-         #   shuffle(lightList)
-        for idx in range(len(lightList)):
-            genome.append((randint(10, 60), self.initial[idx][1], lightList[idx]-1))
+        # lightList = list(range(len(self.initial)))
+        # while not self.ok(lightList):
+        #     shuffle(lightList)
+        for idx in range(len(self.initial)):
+            genome.append((randint(1, 60), self.initial[idx][1], self.initial[idx][2]))
         
     # generate a new population
     def generatePopulation(self):
@@ -42,34 +42,33 @@ class genetic:
         return population
     
     def run(self):
-        for idx in range(0, 3):
+        for idx in range(10):
             for genome in self.population:
                 for light in genome:
                     print("LIGHT")
                     print(light)
                 self.fitnessValues.append(runSimulation(genome))
-                #print(genome)
-            print("RUN {} OF 10".format(idx))
-                
+                print(self.fitnessValues)
+            print("RUN {} OF 10".format(idx + 1))
+               
             population = [idx for _,idx in sorted(zip(self.fitnessValues, self.population))]
             self.fitnessValues = sorted(self.fitnessValues)
-            
             prob = [(element / sum(self.fitnessValues)) for element in self.fitnessValues]
-            
-            print(self.fitnessValues)
             print(prob)
-            for idx in range(int(len(population) / 2)):
-                parent2 = population[np.random.choice(self.populationSize, 1, p = prob)[0]]
-                parent1 = population[np.random.choice(self.populationSize, 1, p = prob)[0]]
-                # print("Parent 1")
-                # print(parent1)
-                # print("Parent 2")
-                # print(parent2)
+            for genome in range(5):
+                p1 = np.random.choice(self.populationSize, 1, p = prob)[0]
+                p2 = np.random.choice(self.populationSize, 1, p = prob)[0]
+                print("PARENT 1 is {}".format(p1))
+                print("PARENT 2 is {}".format(p2))
+                parent2 = population[p1]
+                parent1 = population[p2]
                 self.crossover(parent1, parent2)    
                 
             self.population = self.newPopulation
-            self.fitnessValues = []        
-        
+            self.fitnessValues = []
+            self.newPopulation = []        
+            print(len(self.population))
+                    
     # perform single-point crossover to produce 2 new offsprings
     def crossover(self, genome1, genome2):
         newGenome1 = []
@@ -98,14 +97,8 @@ class genetic:
     # and changing its time and also the next light that is going to be green    
     def mutation(self, genome):
         if np.random.random() <= self.mutationProbability:
-            gene = genome[randint(0, len(genome))]
-            gene[0] = randint(1, self.maxTime)                    # time
-            gene[2] = randint(0, len(genome))        
-            print("genennene")
-            print(gene)             # next light
-        
-
-        return genome            
-    
-            
-        
+            idx = randint(0, len(genome))
+            print(idx)
+            genome[idx][0] = randint(1, self.maxTime)                   # time
+            # gene[2] = randint(0, len(genome))                   # next light
+        return genome

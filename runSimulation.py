@@ -52,6 +52,6 @@ def runSimulation(geneticState):
         step += 1
         traci.simulationStep()
         
-    fitnessValue = step / 3600      # How many irl hours did the simulation take
+    fitnessValue = 1 / (step / 3600)      # How many irl hours did the simulation take
     traci.close()
     return fitnessValue
