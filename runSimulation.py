@@ -71,5 +71,6 @@ def runSimulation(chromosome):
         driving += d
         traci.simulationStep()
         
-    fitnessValue = driving / waiting      
+    fitnessValue = driving / waiting 
+    traci.close()     
     return fitnessValue
