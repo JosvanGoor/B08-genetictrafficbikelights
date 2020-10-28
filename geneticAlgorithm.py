@@ -52,7 +52,10 @@ class genetic:
                                 
             self.file.write("RUN {} of {} \n".format(idx + 1, self.iterations))
             
-            population = [idx for _,idx in sorted(zip(self.fitnessValues, self.population), reverse = True)]
+            # order the the chromosomes from high to low based on their fitness
+            population = [idx for _,idx in sorted(zip(self.fitnessValues, self.population), reverse = True)]  
+            
+            # order the fitness from high to low
             self.fitnessValues = sorted(self.fitnessValues, reverse = True)
             prob = [(element / sum(self.fitnessValues)) for element in self.fitnessValues]
             

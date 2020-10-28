@@ -14,12 +14,28 @@ else :
 SUMO_COMMAND = [SUMO_BINARY, "-c", "quadintersection/quad.sumocfg"]
 numroutes = 55
 
+def getActivity():
+    waiting = 0
+    driving = 0
+
+    vehicles = traci.vehicle.getIDList()
+    for veh in vehicles:
+        if traci.vehicle.getSpeed(veh) < 0.1:
+            waiting += 1
+        else:
+            driving += 1
+
+    return (waiting, driving)
+
 def runSimulation(chromosome):
     step = 0
     
     # Experiment options
-    numveh = 100               # How many vehicles to add to the simulation
+    numveh = 100                # How many vehicles to add to the simulation
     timeOut = 50000             # When should the simulation timeout    
+    
+    waiting = 0
+    driving = 0
     
     traci.start(SUMO_COMMAND)
     
@@ -50,8 +66,10 @@ def runSimulation(chromosome):
             traci.vehicle.add("newVeh_{}".format(numveh + 1), "trip_{}".format(randint(0, numroutes - 1)), "default_car")
             numveh -= 2
         step += 1
+        (w, d) = getActivity()
+        waiting += w
+        driving += d
         traci.simulationStep()
-
-    fitnessValue = 1 / (step / 3600)      # How many irl hours did the simulation take
-    traci.close()
+        
+    fitnessValue = driving / waiting      
     return fitnessValue
