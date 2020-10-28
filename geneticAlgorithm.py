@@ -20,6 +20,8 @@ class genetic:
         self.fitnessValues = []
         self.file = open("results.txt","a")
         self.iterations = 50
+        self.avgFit = []
+        self.stdFit = []
     
     # def ok(self, listToTest):
     #     for idx in range(len(listToTest)):
@@ -45,12 +47,13 @@ class genetic:
     
     def run(self):
         for idx in range(self.iterations):
+            file = open("results.txt","a")
             for genome in self.population:
                 for light in genome:
                     print(light)
                 self.fitnessValues.append(runSimulation(genome))
                                 
-            self.file.write("RUN {} of {} \n".format(idx + 1, self.iterations))
+            file.write("RUN {} of {} \n".format(idx + 1, self.iterations))
             
             # order the the chromosomes from high to low based on their fitness
             population = [idx for _,idx in sorted(zip(self.fitnessValues, self.population), reverse = True)]  
@@ -59,7 +62,10 @@ class genetic:
             self.fitnessValues = sorted(self.fitnessValues, reverse = True)
             prob = [(element / sum(self.fitnessValues)) for element in self.fitnessValues]
             
-            self.file.write("Avg. Fitness:{} sd {} \n".format(np.mean(self.fitnessValues), np.std(self.fitnessValues)))
+            file.write("Avg. Fitness:{} sd {} \n".format(np.mean(self.fitnessValues), np.std(self.fitnessValues)))
+            
+            self.avgFit.append(np.mean(self.fitnessValues))
+            self.stdFit.append(np.std(self.fitnessValues))
             
             elite = int(self.populationSize * 10 / 100)         # 10%    
             for pop_index in range(elite):                      # copy the best chromosomes into the new population
@@ -77,8 +83,16 @@ class genetic:
                 
             self.population = self.newPopulation
             self.fitnessValues = []
-            self.newPopulation = []   
-
+            self.newPopulation = []
+            file.close()
+        file = open("results.txt","a")
+        file.write("Average deviation: \n")
+        for element in self.avgFit:
+            file.write(str(element)+" ")
+        file.write("\n Standard deviation: \n")
+        for element in self.stdFit:
+            file.write(str(element)+" ")
+        file.close()            
     # perform single-point crossover to produce 2 new offsprings
     def crossover(self, genome1, genome2):
         newGenome1 = []
