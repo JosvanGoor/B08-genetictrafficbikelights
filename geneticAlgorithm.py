@@ -45,7 +45,6 @@ class genetic:
         for idx in range(10):
             for genome in self.population:
                 for light in genome:
-                    print("LIGHT")
                     print(light)
                 self.fitnessValues.append(runSimulation(genome))
                 print(self.fitnessValues)
@@ -55,6 +54,12 @@ class genetic:
             self.fitnessValues = sorted(self.fitnessValues)
             prob = [(element / sum(self.fitnessValues)) for element in self.fitnessValues]
             print(prob)
+
+            elite = self.populationSize * 10 / 100      # 10%
+
+            for pop_index in range(elite):              # copy the best chromosomes into the new population
+                self.newPopulation.append(population[pop_index])
+
             for genome in range(5):
                 p1 = np.random.choice(self.populationSize, 1, p = prob)[0]
                 p2 = np.random.choice(self.populationSize, 1, p = prob)[0]
@@ -85,12 +90,7 @@ class genetic:
         # add the offsprings to the new population 
         # we also try to mutate them
         self.newPopulation.append(self.mutation(newGenome1))
-       #print("New Popoluation genom 1")
-        #print(self.newPopulation)
-
         self.newPopulation.append(self.mutation(newGenome2))
-        #print("New Popoluation genom 2")
-        #print(self.newPopulation)
           
     # function to try and mutate the genome by changing one its genes
     # in our case this means selecting a random traffic light configuration 
