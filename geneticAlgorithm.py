@@ -14,7 +14,7 @@ class genetic:
         self.maxTime = 60
         self.crossoverPoint = 3
         self.newPopulation = []
-        self.mutationProbability = 0.5
+        self.mutationProbability = 0.01
         self.initial = state
         self.population = self.generatePopulation()
         self.fitnessValues = []
@@ -86,13 +86,11 @@ class genetic:
         self.newPopulation.append(self.mutation(newGenome1))
         self.newPopulation.append(self.mutation(newGenome2))
           
-    # function to try and mutate the genome by changing one its genes
-    # in our case this means selecting a random traffic light configuration 
-    # and changing its time and also the next light that is going to be green    
-    def mutation(self, genome):
+    # function that modifies the times of a chromosomes    
+    def mutation(self, chromosome):
         if np.random.random() <= self.mutationProbability:
-            idx = randint(0, len(genome))
-            print(idx)
-            genome[idx][0] = randint(1, self.maxTime)                   # time
-            # gene[2] = randint(0, len(genome))                   # next light
-        return genome
+            newChromosome = []                                          # time
+            for idx in range(len(self.initial)):
+                newChromosome.append((randint(1, 60), self.initial[idx][1], self.initial[idx][2]))
+            return newChromosome
+        return chromosome
