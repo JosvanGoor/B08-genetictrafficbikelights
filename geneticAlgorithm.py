@@ -27,10 +27,10 @@ class genetic:
     
     def newGenes(self, genome):
         lightList = list(range(len(self.initial)))
-        while not self.ok(lightList):
-            shuffle(lightList)
+        #while not self.ok(lightList):
+         #   shuffle(lightList)
         for idx in range(len(lightList)):
-            genome.append((randint(10, 60), self.initial[idx][1], lightList[idx]))
+            genome.append((randint(10, 60), self.initial[idx][1], lightList[idx]-1))
         
     # generate a new population
     def generatePopulation(self):
@@ -42,12 +42,13 @@ class genetic:
         return population
     
     def run(self):
-        for idx in range(0, 10):
+        for idx in range(0, 3):
             for genome in self.population:
                 for light in genome:
+                    print("LIGHT")
                     print(light)
                 self.fitnessValues.append(runSimulation(genome))
-                print(self.fitnessValues)
+                #print(genome)
             print("RUN {} OF 10".format(idx))
                 
             population = [idx for _,idx in sorted(zip(self.fitnessValues, self.population))]
@@ -60,6 +61,10 @@ class genetic:
             for idx in range(int(len(population) / 2)):
                 parent2 = population[np.random.choice(self.populationSize, 1, p = prob)[0]]
                 parent1 = population[np.random.choice(self.populationSize, 1, p = prob)[0]]
+                # print("Parent 1")
+                # print(parent1)
+                # print("Parent 2")
+                # print(parent2)
                 self.crossover(parent1, parent2)    
                 
             self.population = self.newPopulation
@@ -81,7 +86,12 @@ class genetic:
         # add the offsprings to the new population 
         # we also try to mutate them
         self.newPopulation.append(self.mutation(newGenome1))
+       #print("New Popoluation genom 1")
+        #print(self.newPopulation)
+
         self.newPopulation.append(self.mutation(newGenome2))
+        #print("New Popoluation genom 2")
+        #print(self.newPopulation)
           
     # function to try and mutate the genome by changing one its genes
     # in our case this means selecting a random traffic light configuration 
@@ -90,7 +100,11 @@ class genetic:
         if np.random.random() <= self.mutationProbability:
             gene = genome[randint(0, len(genome))]
             gene[0] = randint(1, self.maxTime)                    # time
-            gene[2] = randint(0, len(genome))                     # next light
+            gene[2] = randint(0, len(genome))        
+            print("genennene")
+            print(gene)             # next light
+        
+
         return genome            
     
             

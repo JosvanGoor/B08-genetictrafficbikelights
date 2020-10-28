@@ -19,7 +19,7 @@ def runSimulation(geneticState):
     
     # Experiment options
     numveh = 100               # How many vehicles to add to the simulation
-    timeOut = 3600             # When should the simulation timeout    
+    timeOut = 200             # When should the simulation timeout    
     
     traci.start(SUMO_COMMAND)
     
