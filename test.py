@@ -37,6 +37,25 @@ def generate_routes():
 
 # generate_routes()
 
+def getDensity(edgeID):
+    num = traci.edge.getLastStepVehicleNumber(edgeID)
+    density = num/traci.lane.getLength(edgeID + "_0")/1000
+    return density
+
+
+def getJunctionDensity(listOfEdges):
+    density = 0
+    for edge in listOfEdges:
+        density += getDensity(edge)
+    return density/len(listOfEdges)
+
+
+def getlaneIDs():
+    tlights = traci.trafficlight.getIDList()
+    lanes = {tl:traci.trafficlight.getControlledLanes(tl) for tl in tlights}
+    print(lanes)
+        
+
 def runSimulation(geneticState):
     traci.start(SUMO_COMMAND)
     step = 0
@@ -44,11 +63,22 @@ def runSimulation(geneticState):
     traci.vehicle.add("newVeh_{}".format(1), "trip_{}".format(randint(0, numroutes - 1)), "default_car")
     numveh = 2
 
+    #to be filled in by Jos, the arrays of the lanes that lead to the junction
+    nw_lanes = []
+    ne_lanes = []
+    sw_lanes = []
+    se_lanes = []
 
     nw_controller = TlsController("junc_nw", True)
     ne_controller = TlsController("junc_ne", False)
     sw_controller = TlsController("junc_sw", True)
     se_controller = TlsController("junc_se", False)
+
+    #get densities of the junctions
+    nw_density = getJunctionDensity(nw_lanes)
+    ne_density = getJunctionDensity(ne_lanes)
+    sw_density = getJunctionDensity(sw_lanes)
+    se_density = getJunctionDensity(se_lanes)
 
     nw_controller = geneticState
     ne_controller = geneticState
