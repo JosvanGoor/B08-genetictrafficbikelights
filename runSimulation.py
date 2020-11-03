@@ -27,6 +27,13 @@ def getActivity():
 
     return (waiting, driving)
 
+#Density is the number of vehicles per km for estimation of traffic flow
+def getDensity(edgeID):
+    num = traci.edge.getLastStepVehicleNumber(edgeID)
+    density = num/traci.lane.getLength(edgeID + "_0")/1000
+    return density
+
+
 def runSimulation(chromosome):
     step = 0
     
