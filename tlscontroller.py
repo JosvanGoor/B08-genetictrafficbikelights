@@ -52,7 +52,7 @@ class TlsController:
 
 
     def read_confs(self, low, med, high):
-        self.density_sets = [self.read_conf(low), self.read_conf(med), self.read_conf(high),self.read_conf(default)]
+        self.density_sets = [self.read_conf(low), self.read_conf(med), self.read_conf(high)]
         self.states = self.density_sets[1] # assume medium
 
     def read_conf(self, filename):
@@ -73,7 +73,7 @@ class TlsController:
         # limits, 0 - ?? = low, ?? - ??? = med. ???+ = high
         if density == -1:
             print("-- default state")
-            self.signal_density(3)
+            #self.signal_density(3)
         elif density < 35:
             print("-- low density detected")
             self.signal_density(0)
