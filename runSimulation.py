@@ -5,6 +5,7 @@ import traci
 from sumolib import checkBinary
 from random import randint
 from tlscontroller import TlsController
+import pickle
 
 if 'SUMO_HOME' in os.environ :
     SUMO_BINARY = checkBinary('sumo')           # for Win
@@ -27,6 +28,28 @@ def getActivity():
 
     return (waiting, driving)
 
+
+#Density is the number of vehicles per km for estimation of traffic flow
+def getDensity(edgeID):
+    num = traci.edge.getLastStepVehicleNumber(edgeID)
+    density = num/traci.lane.getLength(edgeID + "_0")/1000
+    return density
+
+
+def getJunctionDensity(listOfEdges):
+    density = 0
+    for edge in listOfEdges:
+        density += getDensity(edge)
+    return density/len(listOfEdges)
+
+
+def getlaneIDs():
+    tlights = traci.trafficlight.getIDList()
+    lanes = {tl:traci.trafficlight.getControlledLanes(tl) for tl in tlights}
+    print(lanes)
+        
+
+
 def runSimulation(chromosome):
     step = 0
     
@@ -44,10 +67,21 @@ def runSimulation(chromosome):
     numveh -= 1
     traci.simulationStep()
 
+    nw_lanes = ["in_nw_south", "in_nw_east", "out_sw_north", "out_ne_west"]
+    ne_lanes = ["out_nw_east", "in_ne_west", "in_ne_south", "out_se_north"]
+    sw_lanes = ["out_nw_south", "in_sw_north", "in_sw_east", "out_se_west"]
+    se_lanes = ["out_sw_east", "in_se_west", "out_ne_south", "in_se_north"]
+
     nw_controller = TlsController("junc_nw", True)
     ne_controller = TlsController("junc_ne", True)
     sw_controller = TlsController("junc_sw", True)
     se_controller = TlsController("junc_se", True)
+
+    #get densities of the junctions
+    nw_density = getJunctionDensity(nw_lanes)
+    ne_density = getJunctionDensity(ne_lanes)
+    sw_density = getJunctionDensity(sw_lanes)
+    se_density = getJunctionDensity(se_lanes)
 
     nw_controller.modify_states(chromosome)
     ne_controller.modify_states(chromosome)
@@ -72,5 +106,6 @@ def runSimulation(chromosome):
         traci.simulationStep()
         
     fitnessValue = driving / waiting 
+    getlaneIDs()
     traci.close()     
     return fitnessValue
