@@ -39,6 +39,8 @@ class TlsController:
         self.timer = self.current_state[0]
         traci.trafficlight.setRedYellowGreenState(self.tls_id, self.current_state[1])
 
+        self.density_sets = [self.states]
+
         # print("- Lights")
         # for lane in self.lanes:
         #     lane.print()
@@ -49,6 +51,44 @@ class TlsController:
         # print ("--- done tlscontroller {} ---\n".format(tls_id))
 
 
+    def read_confs(self, low, med, high):
+        self.density_sets = [self.read_conf(low), self.read_conf(med), self.read_conf(high)]
+        self.states = self.density_sets[1] # assume medium
+
+    def read_conf(self, filename):
+        states = []
+
+        with open(filename, "r") as file:
+            lines = file.readlines()
+            for line in lines:
+                values = line.split(" ")
+                values[0] = int(values[0])
+                values[2] = int(values[2])
+                states.append((values[0], values[1], values[2]))
+        
+        return states
+
+
+    def adjust_to_density(self, density):
+        # limits, 0 - ?? = low, ?? - ??? = med. ???+ = high
+        if density < 35:
+            print("-- low density detected")
+            self.signal_density(0)
+        elif density > 75:
+            print("-- med density detected")
+            self.signal_density(2)
+        else:
+            print("-- high density detected")
+            self.signal_density(1)
+
+
+    # Accepts 0 (low), 1 (medium), 2(high)
+    def signal_density(self, level):
+        if level < 0 or level >= len(self.density_sets):
+            raise "Density level not supported"
+        self.states = self.density_sets[level]
+
+    
     def update(self):
         if not self.timer == 0:
             self.timer -= 1

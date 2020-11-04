@@ -82,7 +82,13 @@ def runSimulation(chromosome):
     sw_controller.modify_states(chromosome)
     se_controller.modify_states(chromosome)
 
-    
+    use_saved = True
+    if use_saved:
+        nw_controller.read_confs("lowdensity.conf", "mediumdensity.conf", "highdensity.conf")
+        ne_controller.read_confs("lowdensity.conf", "mediumdensity.conf", "highdensity.conf")
+        sw_controller.read_confs("lowdensity.conf", "mediumdensity.conf", "highdensity.conf")
+        se_controller.read_confs("lowdensity.conf", "mediumdensity.conf", "highdensity.conf")
+        print ("----- LOADED CONFS -----")
 
     while traci.vehicle.getIDCount() > 0 and step < timeOut:
 
@@ -102,6 +108,14 @@ def runSimulation(chromosome):
             traci.vehicle.add("newVeh_{}".format(numveh + 0), "trip_{}".format(randint(0, numroutes - 1)), "default_bicycle")
             traci.vehicle.add("newVeh_{}".format(numveh + 1), "trip_{}".format(randint(0, numroutes - 1)), "default_car")
             numveh -= 2
+        
+        # Twice every minute, adjust to density
+        if step % 30 == 0 and use_saved:
+            nw_controller.adjust_to_density(getJunctionDensity(nw_lanes))
+            ne_controller.adjust_to_density(getJunctionDensity(ne_lanes))
+            sw_controller.adjust_to_density(getJunctionDensity(sw_lanes))
+            se_controller.adjust_to_density(getJunctionDensity(se_lanes))
+        
         step += 1
         (w, d) = getActivity()
         waiting += w
