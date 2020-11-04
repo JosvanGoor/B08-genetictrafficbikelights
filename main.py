@@ -18,6 +18,6 @@ SUMO_COMMAND = [SUMO_BINARY, "-c", "quadintersection/quad.sumocfg"]
 traci.start(SUMO_COMMAND)
 initialState = TlsController("junc_nw", True).states
 traci.close()
-
+print (initialState)
 experiment = genetic(initialState)
 experiment.run()
