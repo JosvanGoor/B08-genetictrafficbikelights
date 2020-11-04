@@ -62,12 +62,11 @@ def runSimulation(geneticState):
     traci.vehicle.add("newVeh_{}".format(0), "trip_{}".format(randint(0, numroutes - 1)), "default_bicycle")
     traci.vehicle.add("newVeh_{}".format(1), "trip_{}".format(randint(0, numroutes - 1)), "default_car")
     numveh = 2
-
-    #to be filled in by Jos, the arrays of the lanes that lead to the junction
-    nw_lanes = []
-    ne_lanes = []
-    sw_lanes = []
-    se_lanes = []
+    
+    nw_lanes = ["in_nw_south", "in_nw_east", "out_sw_north", "out_ne_west"]
+    ne_lanes = ["out_nw_east", "in_ne_west", "in_ne_south", "out_se_north"]
+    sw_lanes = ["out_nw_south", "in_sw_north", "in_sw_east", "out_se_west"]
+    se_lanes = ["out_sw_east", "in_se_west", "out_ne_south", "in_se_north"]
 
     nw_controller = TlsController("junc_nw", True)
     ne_controller = TlsController("junc_ne", False)
