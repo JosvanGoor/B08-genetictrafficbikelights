@@ -7,13 +7,14 @@ from random import randint
 from tlscontroller import TlsController
 import pickle
 
-if 'SUMO_HOME' in os.environ :
+if 'SUMO_HOME' in os.environ:
     SUMO_BINARY = checkBinary('sumo')           # for Win
-else :
+else:
     SUMO_BINARY = "/usr/bin/sumo"               # for Unix
 
 SUMO_COMMAND = [SUMO_BINARY, "-c", "quadintersection/quad.sumocfg"]
 numroutes = 55
+
 
 def getActivity():
     waiting = 0
@@ -29,7 +30,7 @@ def getActivity():
     return (waiting, driving)
 
 
-#Density is the number of vehicles per km for estimation of traffic flow
+# Density is the number of vehicles per km for estimation of traffic flow
 def getDensity(edgeID):
     num = traci.edge.getLastStepVehicleNumber(edgeID)
     density = num / traci.lane.getLength(edgeID + "_0") * 1000
@@ -45,9 +46,8 @@ def getJunctionDensity(listOfEdges):
 
 def getlaneIDs():
     tlights = traci.trafficlight.getIDList()
-    lanes = {tl:traci.trafficlight.getControlledLanes(tl) for tl in tlights}
+    lanes = {tl: traci.trafficlight.getControlledLanes(tl) for tl in tlights}
     print(lanes)
-        
 
 
 def runSimulation(chromosome):
@@ -55,15 +55,17 @@ def runSimulation(chromosome):
     maxim = 0
     # Experiment options
     numveh = 350               # How many vehicles to add to the simulation
-    timeOut = 50000             # When should the simulation timeout    
-    
+    timeOut = 50000             # When should the simulation timeout
+
     waiting = 0
     driving = 0
-    
+
     traci.start(SUMO_COMMAND)
-    
-    traci.vehicle.add("newVeh_{}".format(0), "trip_{}".format(randint(0, numroutes - 1)), "default_bicycle")
-    traci.vehicle.add("newVeh_{}".format(1), "trip_{}".format(randint(0, numroutes - 1)), "default_car")
+
+    traci.vehicle.add("newVeh_{}".format(0), "trip_{}".format(
+        randint(0, numroutes - 1)), "default_bicycle")
+    traci.vehicle.add("newVeh_{}".format(1), "trip_{}".format(
+        randint(0, numroutes - 1)), "default_car")
     numveh -= 2
     traci.simulationStep()
 
@@ -84,11 +86,15 @@ def runSimulation(chromosome):
 
     use_saved = True
     if use_saved:
-        nw_controller.read_confs("lowdensity.conf", "mediumdensity.conf", "highdensity.conf")
-        ne_controller.read_confs("lowdensity.conf", "mediumdensity.conf", "highdensity.conf")
-        sw_controller.read_confs("lowdensity.conf", "mediumdensity.conf", "highdensity.conf")
-        se_controller.read_confs("lowdensity.conf", "mediumdensity.conf", "highdensity.conf")
-        print ("----- LOADED CONFS -----")
+        nw_controller.read_confs(
+            "lowdensity.conf", "mediumdensity.conf", "highdensity.conf")
+        ne_controller.read_confs(
+            "lowdensity.conf", "mediumdensity.conf", "highdensity.conf")
+        sw_controller.read_confs(
+            "lowdensity.conf", "mediumdensity.conf", "highdensity.conf")
+        se_controller.read_confs(
+            "lowdensity.conf", "mediumdensity.conf", "highdensity.conf")
+        print("----- LOADED CONFS -----")
 
     while traci.vehicle.getIDCount() > 0 and step < timeOut:
 
@@ -97,36 +103,38 @@ def runSimulation(chromosome):
         sw_controller.update()
         se_controller.update()
 
-        #get densities of the junctions
+        # get densities of the junctions
         nw_density = getJunctionDensity(nw_lanes)
         ne_density = getJunctionDensity(ne_lanes)
         sw_density = getJunctionDensity(sw_lanes)
         se_density = getJunctionDensity(se_lanes)
-        
+
         maxim = max(maxim, nw_density, ne_density, sw_density, se_density)
         if step % 5 == 0 and numveh:
-            traci.vehicle.add("newVeh_{}".format(numveh + 0), "trip_{}".format(randint(0, numroutes - 1)), "default_bicycle")
-            traci.vehicle.add("newVeh_{}".format(numveh + 1), "trip_{}".format(randint(0, numroutes - 1)), "default_car")
+            traci.vehicle.add("newVeh_{}".format(
+                numveh + 0), "trip_{}".format(randint(0, numroutes - 1)), "default_bicycle")
+            traci.vehicle.add("newVeh_{}".format(
+                numveh + 1), "trip_{}".format(randint(0, numroutes - 1)), "default_car")
             numveh -= 2
-        
+
         # Twice every minute, adjust to density
         if step % 30 == 0 and use_saved:
             nw_controller.adjust_to_density(getJunctionDensity(nw_lanes))
             ne_controller.adjust_to_density(getJunctionDensity(ne_lanes))
             sw_controller.adjust_to_density(getJunctionDensity(sw_lanes))
             se_controller.adjust_to_density(getJunctionDensity(se_lanes))
-        
+
         step += 1
         (w, d) = getActivity()
         waiting += w
         driving += d
         traci.simulationStep()
-        
-    fitnessValue = driving / waiting 
+
+    fitnessValue = driving / waiting
     getlaneIDs()
     traci.close()
-    file = open("densities.txt","a")
+    file = open("densities.txt", "a")
     file.write(str(maxim))
     file.write("\n")
-    file.close()     
+    file.close()
     return fitnessValue

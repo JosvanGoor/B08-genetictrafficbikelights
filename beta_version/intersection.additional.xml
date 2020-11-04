@@ -1,9 +1,0 @@
-<routes>
-    <vType id = "default_bicycle" vClass = "bicycle"/>
-        <!-- <param key="has.rerouting.device" value="true"/> -->
-    <!-- </vType> -->
-
-    <vType id = "default_car" vClass = "passenger"/>
-        <!-- <param key="has.rerouting.device" value="true"/> -->
-    <!-- </vType> -->
-</routes>

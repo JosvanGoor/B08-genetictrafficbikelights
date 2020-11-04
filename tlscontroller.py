@@ -1,17 +1,36 @@
 import traci
-from util import transition_program
+
+
+def transition_program(old, new):
+    yellow = False
+    program = []
+
+    for idx in range(len(old)):
+        if old[idx] == new[idx]:
+            program.append(old[idx])
+
+        elif new[idx] == 'r':
+            yellow = True
+            program.append('y')
+
+        else:
+            program.append(old[idx])
+
+    if yellow:
+        return "".join(program)
+    return None  # no change
+
 
 class Lane:
-    
+
     def __init__(self, name):
         self.name = name
         self.tl_indices = []
         self.outlanes = []
         self.vialanes = []
-        
+
         allowed = traci.lane.getAllowed(self.name)
         self.bikelane = "bicycle" in allowed
-
 
     def print(self):
         print("{}{} controlling {} to {}, via {} respectively".format(
@@ -22,14 +41,15 @@ class Lane:
             self.vialanes
         ))
 
+
 class TlsController:
 
     # Sets up lane info & tls programs, controllable interface
-    def __init__(self, tls_id, group_bikelanes = False):
-        print ("--- init tlscontroller {} ---".format(tls_id))
+    def __init__(self, tls_id, group_bikelanes=False):
+        print("--- init tlscontroller {} ---".format(tls_id))
         self.tls_id = tls_id
         self.states = []
-        
+
         self.__init_lanes()
         self.__init_bike_states(group_bikelanes)
         self.__init_car_states()
@@ -37,7 +57,8 @@ class TlsController:
         self.current_state = self.states[0]
         self.transitioning = False
         self.timer = self.current_state[0]
-        traci.trafficlight.setRedYellowGreenState(self.tls_id, self.current_state[1])
+        traci.trafficlight.setRedYellowGreenState(
+            self.tls_id, self.current_state[1])
 
         self.density_sets = [self.states]
 
@@ -50,10 +71,10 @@ class TlsController:
         #     print(state)
         # print ("--- done tlscontroller {} ---\n".format(tls_id))
 
-
     def read_confs(self, low, med, high):
-        self.density_sets = [self.read_conf(low), self.read_conf(med), self.read_conf(high)]
-        self.states = self.density_sets[1] # assume medium
+        self.density_sets = [self.read_conf(
+            low), self.read_conf(med), self.read_conf(high)]
+        self.states = self.density_sets[1]  # assume medium
 
     def read_conf(self, filename):
         states = []
@@ -65,9 +86,8 @@ class TlsController:
                 values[0] = int(values[0])
                 values[2] = int(values[2])
                 states.append((values[0], values[1], values[2]))
-        
-        return states
 
+        return states
 
     def adjust_to_density(self, density):
         # limits, 0 - ?? = low, ?? - ??? = med. ???+ = high
@@ -81,43 +101,46 @@ class TlsController:
             print("-- high density detected")
             self.signal_density(1)
 
-
     # Accepts 0 (low), 1 (medium), 2(high)
+
     def signal_density(self, level):
         if level < 0 or level >= len(self.density_sets):
             raise "Density level not supported"
         self.states = self.density_sets[level]
 
-    
     def update(self):
         if not self.timer == 0:
             self.timer -= 1
             return
 
         if self.timer == 0:
-            if not self.transitioning: # we are going to now
+            if not self.transitioning:  # we are going to now
                 next = self.states[self.current_state[2]]
-                
+
                 trans = transition_program(self.current_state[1], next[1])
                 if trans:
                     self.transitioning = True
                     self.timer = 3
-                    traci.trafficlight.setRedYellowGreenState(self.tls_id, trans)
+                    traci.trafficlight.setRedYellowGreenState(
+                        self.tls_id, trans)
                     return
 
             self.current_state = self.states[self.current_state[2]]
             self.timer = self.current_state[0]
             self.transitioning = False
-            traci.trafficlight.setRedYellowGreenState(self.tls_id, self.current_state[1])
+            traci.trafficlight.setRedYellowGreenState(
+                self.tls_id, self.current_state[1])
 
     def modify_states(self, state):
         self.states = state
         self.current_state = self.states[0]
         self.transitioning = False
         self.timer = self.current_state[0]
-        traci.trafficlight.setRedYellowGreenState(self.tls_id, self.current_state[1])
-    
+        traci.trafficlight.setRedYellowGreenState(
+            self.tls_id, self.current_state[1])
+
     # Initialized tls programs for bikes
+
     def __init_bike_states(self, group):
         bikelanes = []
         for lane in self.lanes:
@@ -130,17 +153,16 @@ class TlsController:
             for lane in bikelanes:
                 self.__gen_state([lane])
 
-
     def __init_car_states(self):
         targets = \
-        [
-            [("north", ["south", "east"]), ("north", ["south", "west"])],
-            [("north", ["south", "west"]), ("south", ["north", "east"])],
-            [("east", ["north", "west"]), ("east", ["south", "west"])],
-            [("east", ["south", "west"]), ("west", ["north", "east"])],
-            [("south", ["north", "west"]), ("south", ["north", "east"])],
-            [("west", ["north", "east"]), ("west", ["south", "east"])]
-        ]
+            [
+                [("north", ["south", "east"]), ("north", ["south", "west"])],
+                [("north", ["south", "west"]), ("south", ["north", "east"])],
+                [("east", ["north", "west"]), ("east", ["south", "west"])],
+                [("east", ["south", "west"]), ("west", ["north", "east"])],
+                [("south", ["north", "west"]), ("south", ["north", "east"])],
+                [("west", ["north", "east"]), ("west", ["south", "east"])]
+            ]
 
         for target in targets:
             lanes = []
@@ -148,8 +170,8 @@ class TlsController:
                 lanes.append(self.find_lane(lane[0], lane[1])[0])
             self.__gen_state(lanes)
 
-    
     # Generates (green) program for given set of lanes
+
     def __gen_state(self, lanes):
         state = ["r"] * self.numlights
 
@@ -159,8 +181,8 @@ class TlsController:
 
         self.states.append((20, "".join(state), len(self.states) - 1))
 
-
     # Gathers lane info, groups lights
+
     def __init_lanes(self):
         links = traci.trafficlight.getControlledLinks(self.tls_id)
         self.numlights = len(links)
@@ -176,15 +198,13 @@ class TlsController:
             self.lanes[-1].outlanes.append(links[idx][0][1])
             self.lanes[-1].vialanes.append(links[idx][0][2])
 
-
     def __in_any_of(self, key, lanes):
         for lane in lanes:
             if key in lane:
                 return True
         return False
 
-
-    def find_lane(self, start, ends, allow_bikes = False):
+    def find_lane(self, start, ends, allow_bikes=False):
         starters = []
         target = []
 
@@ -203,4 +223,3 @@ class TlsController:
                 target.append(starter)
 
         return target
-
