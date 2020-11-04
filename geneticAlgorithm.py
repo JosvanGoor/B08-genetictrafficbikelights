@@ -10,7 +10,7 @@ from runSimulation import runSimulation
 
 class genetic:
     def __init__(self, state):
-        self.populationSize = 10
+        self.populationSize = 20
         self.maxTime = 60
         self.crossoverPoint = 3
         self.newPopulation = []
@@ -19,7 +19,7 @@ class genetic:
         self.population = self.generatePopulation()
         self.fitnessValues = []
         self.file = open("results.txt","a")
-        self.iterations = 50
+        self.iterations = 20
         self.avgFit = []
         self.stdFit = []
     
