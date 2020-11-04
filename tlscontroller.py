@@ -71,10 +71,7 @@ class TlsController:
 
     def adjust_to_density(self, density):
         # limits, 0 - ?? = low, ?? - ??? = med. ???+ = high
-        if density == -1:
-            print("-- default state")
-            #self.signal_density(3)
-        elif density < 35:
+        if density < 35:
             print("-- low density detected")
             self.signal_density(0)
         elif density > 75:
