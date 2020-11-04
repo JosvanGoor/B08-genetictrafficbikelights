@@ -31,7 +31,7 @@ class TlsController:
         self.states = []
         
         self.__init_lanes()
-        #self.__init_bike_states(group_bikelanes)
+        self.__init_bike_states(group_bikelanes)
         self.__init_car_states()
 
         self.current_state = self.states[0]

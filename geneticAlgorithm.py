@@ -92,6 +92,8 @@ class genetic:
         file.write("\n Standard deviation: \n")
         for element in self.stdFit:
             file.write(str(element)+" ")
+        file.write("BEST CONFIGURATION \n")
+        file.write(str(self.population[0]))
         file.close()            
     # perform single-point crossover to produce 2 new offsprings
     def crossover(self, genome1, genome2):
